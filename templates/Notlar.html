@@ -1,0 +1,214 @@
+<!doctype html>
+{% load static%}
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+<style>
+    .pdf {
+        height:700px;
+        width:1000px;
+        margin-left:350px;
+        margin-bottom:50px;
+      }
+      .baslik{
+        margin-left:350px;
+        font-family:"Comic Sans MS", cursive, sans-serif;
+        background-color:#d3d3d3;
+        margin-top:50px;
+      }
+
+        .d-menu{
+            background:#333;
+            width: 300px;
+            height:721px;
+            float:left;
+            margin-top:-50px;
+            margin-left:-8px;
+            position:fixed;
+        }
+        .d-menu ul {
+           list-style:none;
+        }
+        .d-menu ul{
+            margin: 0;
+            padding:0;
+        }
+        .d-menu ul li a{
+            color:#E0E0E0;
+            text-align:left;
+            padding:15px;
+            padding-left:35px;
+            display: block;
+            border-bottom:1px solid #282828;
+            text-decoration:none;
+        }
+        .d-menu ul li ul {
+            display:none;
+        }
+        .d-menu ul li:hover ul {
+            display:block;
+            position:absolute;
+            margin:-56px 0 0 300px;
+        }
+        .d-menu ul li ul li a {
+            padding:10px;
+            font-size:15px;
+            width:170px;
+            background-color:#282828;
+            border-bottom:1px solid #222;
+        }
+        .d-menu ul li a:hover {
+            background-color:#424242;
+            color:#fff;
+            transition:all .3s ease-in-out;
+            text-decoration:none;
+        }
+        .k-menu{
+            background:#333;
+            width:190px;
+            height:76px;
+            margin-left:-8px;
+            margin-top:-68px;
+            position:fixed;
+          }
+          .k-menu ul {
+            list-style:none;
+          }
+          .k-menu ul{
+             margin: 0;
+             padding:0;
+          }
+          .k-menu li a{
+             color:#E0E0E0;
+             text-align:left;
+             padding:15px;
+             padding-left:35px;
+             display: block;
+             border-bottom:1px solid #282828;
+             text-decoration:none;
+          }
+          .k-menu li ul {
+             display:none;
+          }
+          .k-menu li:hover li ul {
+             display:none;
+          }
+          .k-menu li:hover ul {
+             display:block;
+             background:#333;
+          }
+          .k-menu ul li:hover ul {
+             display:block;
+             position:absolute;
+             margin:-53px 0 0 190px;
+          }
+          .k-menu ul li ul li a {
+             padding:10px;
+             width:136px;
+             background-color:#282828;
+             border-bottom:1px solid #222;
+          }
+          .k-menu ul li a:hover {
+             background-color:#424242;
+             color:#fff;
+             transition:all .3s ease-in-out;
+             text-decoration:none;
+          }
+          .k-menu li a:hover {
+             background-color:#424242;
+             color:#fff;
+             transition:all .3s ease-in-out;
+             text-decoration:none;
+          }
+          @media only screen and (min-width:577px){
+          .k-menu,nav ul{display:none;}
+          }
+          @media only screen and (max-width:576px){
+          .d-menu,div ul{display:none;}
+          .k-menu ul li a{padding-left:19px; padding-right:19px;}
+          }
+
+</style>
+
+<title>
+Notlar
+</title>
+</head>
+
+<body>
+
+	<div class="d-menu d-sm-none d-lg-block sticky-top" >
+    <ul class=" d-sm-none d-lg-block sticky-top">
+	    <li ><a href="/index"><font size="5"><i><b>Ana Sayfa</a></b></i></font></li>
+		<li class="açılırmenü2" ><a href="/Kullanim_Klavuzlari"><font size="5"><i><b>Adli Bilişim</a></b></i></font>
+	    <ul>
+		   <li><a  href="/Kullanim_Klavuzlari"><font size="4"><b><i>Kullanım Klavuzları</b></i></a></font></li>
+		   <li><a href="/Notlar"><font size="4"><b><i>Notlar</b></i></a></font></li>
+		</ul>
+        </li>
+		<li class="açılırmenü2" ><a href="/Python"><font size="5"><i><b>Yazılım</a></b></i></font>
+	    <ul>
+		   <li><a  href="/Python"><font size="4"><b><i>Python</b></i></a></font></li>
+		   <li><a href="/veri_yapilari"><font size="4"><b><i>Veri Yapıları</b></i></a></font></li>
+		</ul>
+        </li>
+        <li ><a href="/Siber_Ataklar"><font size="5"><i><b>Siber Ataklar</a></b></i></font></li>
+        {% if request.user.is_authenticated %}
+            <li ><a href="/articles/dashboard"><font size="5"><i><b>Kontrol Paneli</a></b></i></font></li>
+            <li ><a href="/user/logout"><font size="5"><i><b>Çıkış Yap</a></b></i></font></li>
+        {%else%}	
+            <li ><a href="/user/login"><font size="5"><i><b>Giriş Yap</a></b></i></font></li>
+        {%endif%}
+            <li ><a href="/user/register"><font size="5"><i><b>Kayıt Ol</a></b></i></font></li>
+	</ul>
+    </div>
+    
+    <div class="k-menu" >
+        <li  ><a href="/Python"><font size="5"><i><b>Menüler</a></b></i></font>
+            <ul>
+                <li ><a href="/index"><font size="4"><i><b>Ana Sayfa</a></b></i></font></li>
+                
+                <li class="açılırmenü2" ><a href="/Kullanim_Klavuzlari"><font size="4"><i><b>Adli Bilişim</a></b></i></font>
+                <ul>
+                   <li><a  href="/Kullanim_Klavuzlari"><font size="3"><b><i>Kullanım Klavuzları</b></i></a></font></li>
+                   <li><a href="/Notlar"><font size="3"><b><i>Notlar</b></i></a></font></li>
+                </ul>
+                </li>
+                
+                <li class="açılırmenü2" ><a href="/Python"><font size="4"><i><b>Yazılım</a></b></i></font>
+                <ul>
+                   <li><a  href="/Python"><font size="3"><b><i>Python</b></i></a></font></li>
+                   <li><a href="/veri_yapilari"><font size="3"><b><i>Veri Yapıları</b></i></a></font></li>
+                </ul>
+                </li>
+
+            <li ><a href="/Siber_Ataklar"><font size="4"><i><b>Siber Ataklar</a></b></i></font></li>
+            {% if request.user.is_authenticated %}
+                <li ><a href="/articles/dashboard"><font size="4"><i><b>Kontrol Paneli</a></b></i></font></li>
+                <li ><a href="/user/logout"><font size="4"><i><b>Çıkış Yap</a></b></i></font></li>
+            {%else%}
+                <li ><a href="/user/login"><font size="4"><i><b>Giriş Yap</a></b></i></font></li>
+            {%endif%}
+            <li ><a href="/user/register"><font size="4"><i><b>Kayıt Ol</a></b></i></font></li>
+            </ul>
+        </li>
+    </div> 
+
+
+    <h1 class="baslik">Forensic Explorer Not</h1>
+    <link rel="stylesheet" href="{%static 'Forensic_Explorer_Not.pdf'%}">
+    <embed src="{%static 'Forensic_Explorer_Not.pdf'%}" class="pdf">
+<hr></hr>   
+    <h1 class="baslik">Oxygen Not</h1>
+    <link rel="stylesheet" href="{%static 'Oxygen_Not.pdf'%}">
+    <embed src="{%static 'Oxygen_Not.pdf'%}" class="pdf">
+<hr></hr>
+    <h1 class="baslik">UFED Cellebrite 4PC Ve UFED Physical Analyzer Not</h1>
+    <link rel="stylesheet" href="{%static 'UFED_Not.pdf'%}">
+    <embed src="{%static 'UFED_Not.pdf'%}" class="pdf">
+<hr></hr>
+    <h1 class="baslik">Magnet IEF Ve Magnet Axiom Not</h1>
+    <link rel="stylesheet" href="{%static 'Magnet_Not.pdf'%}">
+    <embed src="{%static 'Magnet_Not.pdf'%}" class="pdf">

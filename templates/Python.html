@@ -1,0 +1,1292 @@
+<!doctype html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+<style>
+
+        .d-menu{
+            background:#333;
+            width: 300px;
+            height:721px;
+            margin-top:-50px;
+            margin-left:-8px;
+            position:fixed;
+        }
+        .d-menu ul {
+           list-style:none;
+        }
+        .d-menu ul{
+            margin: 0;
+            padding:0;
+        }
+        .d-menu ul li a{
+            color:#E0E0E0;
+            text-align:left;
+            padding:15px;
+            padding-left:35px;
+            display: block;
+            border-bottom:1px solid #282828;
+            text-decoration:none;
+        }
+        .d-menu ul li ul {
+            display:none;
+        }
+        .d-menu ul li:hover ul {
+            display:block;
+            position:absolute;
+            margin:-56px 0 0 300px;
+        }
+        .d-menu ul li ul li a {
+            padding:10px;
+            font-size:15px;
+            width:170px;
+            background-color:#282828;
+            border-bottom:1px solid #222;
+        }
+        .d-menu ul li a:hover {
+            background-color:#424242;
+            color:#fff;
+            transition:all .3s ease-in-out;
+            text-decoration:none;
+        }
+        .k-menu{
+            background:#333;
+            width: 190px;
+            height:76px;
+            margin-left:-8px;
+            margin-top:-68px;
+            position:fixed;
+          }
+          .k-menu ul {
+            list-style:none;
+          }
+          .k-menu ul{
+             margin: 0;
+             padding:0;
+          }
+          .k-menu li a{
+             color:#E0E0E0;
+             text-align:left;
+             padding:15px;
+             padding-left:35px;
+             display: block;
+             border-bottom:1px solid #282828;
+             text-decoration:none;
+          }
+          .k-menu li ul {
+             display:none;
+          }
+          .k-menu li:hover li ul {
+             display:none;
+          }
+          .k-menu li:hover ul {
+             display:block;
+           background:#333;
+          }
+          .k-menu ul li:hover ul {
+             display:block;
+             position:absolute;
+             margin:-53px 0 0 190px;
+          }
+          .k-menu ul li ul li a {
+             padding:10px;
+             width:136px;
+             background-color:#282828;
+             border-bottom:1px solid #222;
+          }
+          .k-menu ul li a:hover {
+             background-color:#424242;
+             color:#fff;
+             transition:all .3s ease-in-out;
+             text-decoration:none;
+          }
+          .k-menu li a:hover {
+             background-color:#424242;
+             color:#fff;
+             transition:all .3s ease-in-out;
+             text-decoration:none;
+          }
+          @media only screen and (min-width:577px){
+          .k-menu,nav ul{display:none;}
+          }
+          @media only screen and (max-width:576px){
+          .d-menu,div ul{display:none;}
+          .k-menu ul li a{padding-left:19px; padding-right:19px;}
+          }
+      
+  .ic_kisim{
+    height:300px;
+    width:700px;
+    overflow:scroll;
+    background-color:#f2f2f2;
+    padding-left:10px;
+    margin-left:350px;
+    margin-top:50px;
+    margin-bottom:50px;
+    border-radius:15px;}
+
+    @media only screen and (max-width:576px){
+        .d-menu,div ul{display:none;}
+        .y-menu ul li a{padding-left:19px; padding-right:19px;}
+      }
+
+    @media only screen and (min-width:577px){
+        .y-menu,nav ul{display:none;}
+        
+      }
+</style>
+
+<title>
+Örnekler
+</title>
+</head>
+
+<body>
+
+	<div class="d-menu" >
+    <ul>
+	    <li ><a href="/index"><font size="5"><i><b>Ana Sayfa</a></b></i></font></li>
+		<li class="açılırmenü2" ><a href="/Kullanim_Klavuzlari"><font size="5"><i><b>Adli Bilişim</a></b></i></font>
+	    <ul>
+		   <li><a  href="/Kullanim_Klavuzlari"><font size="4"><b><i>Kullanım Klavuzları</b></i></a></font></li>
+		   <li><a href="/Notlar"><font size="4"><b><i>Notlar</b></i></a></font></li>
+		</ul>
+        </li>
+		<li class="açılırmenü2" ><a href="/Python"><font size="5"><i><b>Yazılım</a></b></i></font>
+	    <ul>
+		   <li><a  href="/Python"><font size="4"><b><i>Python</b></i></a></font></li>
+		   <li><a href="/veri_yapilari"><font size="4"><b><i>Veri Yapıları</b></i></a></font></li>
+		</ul>
+        </li>
+        <li ><a href="/Siber_Ataklar"><font size="5"><i><b>Siber Ataklar</a></b></i></font></li>
+        {% if request.user.is_authenticated %}
+            <li ><a href="/articles/dashboard"><font size="5"><i><b>Kontrol Paneli</a></b></i></font></li>
+            <li ><a href="/user/logout"><font size="5"><i><b>Çıkış Yap</a></b></i></font></li>
+        {%else%}	
+            <li ><a href="/user/login"><font size="5"><i><b>Giriş Yap</a></b></i></font></li>
+        {%endif%}
+            <li ><a href="/user/register"><font size="5"><i><b>Kayıt Ol</a></b></i></font></li>
+	</ul>
+    </div>
+
+    <div class="k-menu" >
+        <li  ><a href="/Python"><font size="5"><i><b>Menüler</a></b></i></font>
+            <ul>
+                <li ><a href="/index"><font size="4"><i><b>Ana Sayfa</a></b></i></font></li>
+                
+                <li class="açılırmenü2" ><a href="/Kullanim_Klavuzlari"><font size="4"><i><b>Adli Bilişim</a></b></i></font>
+                <ul>
+                   <li><a  href="/Kullanim_Klavuzlari"><font size="3"><b><i>Kullanım Klavuzları</b></i></a></font></li>
+                   <li><a href="/Notlar"><font size="3"><b><i>Notlar</b></i></a></font></li>
+                </ul>
+                </li>
+                
+                <li class="açılırmenü2" ><a href="/Python"><font size="4"><i><b>Yazılım</a></b></i></font>
+                <ul>
+                   <li><a  href="/Python"><font size="3"><b><i>Python</b></i></a></font></li>
+                   <li><a href="/veri_yapilari"><font size="3"><b><i>Veri Yapıları</b></i></a></font></li>
+                </ul>
+                </li>
+
+            <li ><a href="/Siber_Ataklar"><font size="4"><i><b>Siber Ataklar</a></b></i></font></li>
+            {% if request.user.is_authenticated %}
+                <li ><a href="/articles/dashboard"><font size="4"><i><b>Kontrol Paneli</a></b></i></font></li>
+                <li ><a href="/user/logout"><font size="4"><i><b>Çıkış Yap</a></b></i></font></li>
+            {%else%}
+                <li ><a href="/user/login"><font size="4"><i><b>Giriş Yap</a></b></i></font></li>
+            {%endif%}
+            <li ><a href="/user/register"><font size="4"><i><b>Kayıt Ol</a></b></i></font></li>
+            </ul>
+        </li>
+    </div>  
+
+
+
+<div class="ic_kisim">
+<h3>Dosyadan seçip ya da direkt yazarak mail gönderme</h3>
+<pre>
+import sys
+import os
+import smtplib
+from PyQt5.QtWidgets import QWidget,QTextEdit,QApplication,QPushButton,QVBoxLayout,QHBoxLayout,QFileDialog
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+class Mail(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.init_ui()
+        
+    def init_ui(self):
+        self.yazi_alani=QTextEdit()
+        self.gonder=QPushButton("GÖNDER")
+        self.ac=QPushButton("AÇ")
+        self.sil=QPushButton("SİL")
+        h_box=QHBoxLayout()
+        h_box.addWidget(self.ac)
+        h_box.addWidget(self.gonder)
+        h_box.addWidget(self.sil)
+        
+        v_box=QVBoxLayout()
+        v_box.addWidget(self.yazi_alani)
+        v_box.addLayout(h_box)
+        self.setLayout(v_box)
+        self.setWindowTitle("MailGönderme")
+        self.gonder.clicked.connect(self.maili_gonder)
+        self.ac.clicked.connect(self.dosya_ac)
+        self.sil.clicked.connect(self.yaziyi_temizle)
+        self.show()
+    def yaziyi_temizle(self):
+        self.yazi_alani.clear()
+        
+    def dosya_ac(self):
+        dosya_ismi=QFileDialog.getOpenFileName(self,"DOSYA AÇ",os.getenv("HOME"))
+        with open(dosya_ismi[0],"r")as file:
+            self.yazi_alani.setText(file.read())
+            
+    def maili_gonder(self):
+        mesaj=MIMEMultipart()
+        liste=list()
+        liste.append(self.yazi_alani.toPlainText())
+        mesaj["From"]="mervelik.2328@gmail.com"
+        mesaj["To"]=liste[0]
+        mesaj["Subject"]="Smtp Mail Gönderme"
+        yazi="""
+        Merhaba PyQt5 butonumla smtp sayesinde mail gönderiyorum..
+        """
+        mesaj_gövdesi=MIMEText(yazi,"plain")
+        mesaj.attach(mesaj_gövdesi)
+        try:
+            mail=smtplib.SMTP("smtp.gmail.com",587)
+            mail.ehlo()
+            mail.starttls()
+            mail.login("mervelik.2328@gmail.com","şifre")
+            mail.sendmail(mesaj["From"],mesaj["To"],mesaj.as_string())
+            print("Mail başarıyla gönderildi..")
+        except:
+            sys.stderr.write("Mail gndermesi başarısız oldu..")
+            sys.stderr.flush()
+            
+app=QApplication(sys.argv)
+mail=Mail()
+sys.exit(app.exec_())
+</pre>
+</div>
+
+
+<div class="ic_kisim">
+<h3>İnternet geçmişini görüntüleme</h3>
+<pre>
+import sqlite3
+import sys
+from PyQt5.QtWidgets import QWidget,QApplication,QTextEdit,QPushButton,QVBoxLayout
+
+
+class pencere1(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.baglanti_olustur()
+        self.icerik()
+    
+    def baglanti_olustur(self):
+         self.baglanti=sqlite3.connect("C:\Documents and Settings\Asus\AppData\Local\Google\Chrome\\User Data\Default\History")
+         self.cursor=self.baglanti.cursor()
+         self.baglanti.commit()   
+
+    def icerik(self):
+        self.goruntuleme_butonu=QPushButton("Geçmişi görüntüle")
+        self.text1=QTextEdit()  
+        v_box=QVBoxLayout()
+        v_box.addWidget(self.goruntuleme_butonu)
+        v_box.addWidget(self.text1)
+        self.setLayout(v_box)
+        self.setWindowTitle("İnternet Geçmişini Görüntüleme")
+        self.goruntuleme_butonu.clicked.connect(self.internet_gecmisi)
+        self.show()
+
+    def internet_gecmisi(self):
+        self.cursor.execute("Select url From urls")     
+        self.gecmis=self.cursor.fetchall()
+        
+        for i in self.gecmis:#Ekrana yazdırma.
+            print(i[0])
+            print("************************************")
+            
+
+        self.gecmis=str(self.gecmis)#setPlainText'e list türünde parametre verilmez.
+        self.text1.setPlainText(self.gecmis)#self.text1'e yazdırma.
+
+
+
+app = QApplication(sys.argv)
+window = pencere1()
+sys.exit(app.exec())
+</pre>
+</div>
+
+
+<div class="ic_kisim">
+<h3>Hastane Projesi</h3>
+<pre>
+import sqlite3
+import sys
+from PyQt5.QtWidgets import QTableWidget,QCheckBox,QTableWidgetItem,QMainWindow,QWidget,QLabel,QApplication,QTextEdit,QLineEdit,QPushButton,QVBoxLayout,QHBoxLayout,QComboBox,QAction,qApp
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+class pencere2(QWidget):
+    def baglanti_olustur(self):
+        self.baglanti=sqlite3.connect("hastane_veritabani.db")
+        self.cursor=self.baglanti.cursor() 
+        self.cursor.execute("Create Table If not exists KAYITLI_KULLANICILAR(Kullanici_Adi INT,İsim TEXT,Telefon_Numarasi INT,Mail_Adresi TEXT,Dogum_Tarihi TEXT,Sifre TEXT,Vasfi TEXT,Durum TEXT,Onceki_islemler TEXT,Yeni_islem TEXT)")
+        self.baglanti.commit()
+    
+    def __init__(self):
+        super().__init__() 
+        self.baglanti_olustur()
+        self.cursor.execute("Select Vasfi From KAYITLI_KULLANICILAR where Kullanici_Adi=?",(window.kullanici_adi.text(),))
+        liste=self.cursor.fetchall()
+        self.a=liste[0][0]
+        
+        
+        if(self.a=="Hasta"):
+            self.init_uii()
+        else:
+            self.init_uiii()
+
+    def init_uii(self):
+        
+        self.yazi1=QLabel("HOŞGELDİNİZ",self)
+        self.yazi2=QLabel("Hastane durumunuz için",self)
+        self.yazi3=QLabel()
+        self.yazi4=QLabel()
+        self.yazi5=QLabel("RANDEVU MU ALMAK İSTİYORSUNUZ ?")
+        self.yazi6=QLabel("Randevu almak istediğiniz doktoru seçiniz:")
+        self.yazi7=QLabel("Geliş Amacınızı Belirtiniz:")
+        self.yazi8=QLabel("Uygun olduğunuz saat aralığını seçiniz:")
+        self.buton1=QPushButton("tıklayınız")
+        self.randevu=QPushButton("Randevu Bilgisi")
+        self.randevu_al=QPushButton("Randevuyu Kesinleştir")
+        self.label=QLabel()
+        self.label1=QLabel()
+        self.gecmis=QPushButton("Önceden Yapılan Cerrahi İşlemler")
+        self.label2=QLabel()
+        self.label3=QLabel()
+        self.label4=QLabel()
+        self.label5=QLabel()
+        self.label6=QLabel()
+        self.label7=QLabel()
+        self.sec=QComboBox()
+        self.cursor.execute("Select İsim From KAYITLI_KULLANICILAR where Vasfi='Doktor'")
+        liste1=self.cursor.fetchall()
+        g_liste=liste1[0]
+        g_liste1=liste1[1]
+        self.sec.addItem("Seçiniz")
+        self.sec.addItems(g_liste)
+        self.sec.addItems(g_liste1)
+        
+        self.sec2=QComboBox()
+        self.sec2.addItem("Seçiniz")
+        self.sec2.addItem("Genel muayene ve gözlem")
+        self.sec2.addItem("Kontrol")
+        self.sec2.addItem("20lik diş ağrısı")
+        self.sec2.addItem("20lik diş harici ağrı")
+        self.sec2.addItem("Dolguda düşme veya kırılma")
+        
+        self.sec3=QComboBox()
+        self.sec3.addItem("Seçiniz")
+        self.sec3.addItem("9.00-11.00 arası")
+        self.sec3.addItem("11.00-13.00 arası")
+        self.sec3.addItem("13.00-15.00 arası")
+        self.sec3.addItem("15.00-17.00 arası")
+
+    
+        h_box1=QHBoxLayout()
+        h_box1.addWidget(self.yazi2)
+        h_box1.addWidget(self.buton1)
+        h_box2=QHBoxLayout()
+        h_box2.addWidget(self.yazi3)
+        h_box2.addWidget(self.yazi4)
+        h_box3=QHBoxLayout()
+        h_box3.addWidget(self.yazi6)
+        h_box3.addWidget(self.yazi7)
+        h_box3.addWidget(self.yazi8)
+        h_box4=QHBoxLayout()
+        h_box4.addWidget(self.sec)
+        h_box4.addWidget(self.sec2)
+        h_box4.addWidget(self.sec3)
+        
+        
+        v_box1=QVBoxLayout()
+        v_box1.addWidget(self.yazi1)
+        v_box1.addLayout(h_box1)
+        v_box1.addLayout(h_box2)
+        v_box1.addWidget(self.randevu)
+        v_box1.addWidget(self.label)
+        v_box1.addWidget(self.label1)
+        v_box1.addWidget(self.label2)
+        v_box1.addWidget(self.label3)
+        v_box1.addWidget(self.label5)
+        v_box1.addWidget(self.label6)
+        v_box1.addWidget(self.label7)
+        v_box1.addWidget(self.yazi5)
+        v_box1.addLayout(h_box3)
+        v_box1.addLayout(h_box4)
+        v_box1.addWidget(self.randevu_al)
+        v_box1.addWidget(self.gecmis)
+        v_box1.addWidget(self.label4)
+        self.setLayout(v_box1)
+        self.setWindowTitle("Hasta Penceresi")
+        
+        self.buton1.clicked.connect(self.durum)
+        self.randevu.clicked.connect(self.randevu_bilgisi)
+        self.gecmis.clicked.connect(self.gecmis_islemler)
+        self.randevu_al.clicked.connect(self.randevu_kesinlestir)
+    def durum(self):
+       
+        self.cursor.execute("Select Durum From KAYITLI_KULLANICILAR where Kullanici_Adi=?",(window.kullanici_adi.text(),))
+        liste=self.cursor.fetchall()
+        
+    
+        self.a=liste[0][0]
+        self.yazi2.hide()
+        self.buton1.hide()
+        self.yazi3.setText("Hastane Durumunuz:")
+        self.yazi4.setText(self.a)
+        
+    def randevu_kesinlestir(self):
+        if(self.sec.currentText()!="Seçiniz" and self.sec2.currentText()!="Seçiniz" and self.sec3.currentText()!="Seçiniz" and self.label1.text()=="-" ):
+            liste=(self.sec.currentText()+","+self.sec2.currentText()+","+self.sec3.currentText()+","+";")
+
+            self.cursor.execute("Update KAYITLI_KULLANICILAR set Yeni_islem=? where Kullanici_Adi=?",(liste,window.kullanici_adi.text()))
+            self.baglanti.commit()
+        
+        
+    def randevu_bilgisi(self):
+        self.cursor.execute("Select Yeni_islem From KAYITLI_KULLANICILAR where Kullanici_Adi=?",(window.kullanici_adi.text(),))
+        liste=self.cursor.fetchall()
+        self.randev=liste[0][0]
+        self.randev=self.randev.split(",")
+
+        self.label.setText("Randevunuzun olduğu doktor:")
+        self.label2.setText("Geliş Amacınız:")
+        self.label5.setText("Randevu Saatiniz:")
+        
+        self.label1.setText(self.randev[0])
+        self.label3.setText(self.randev[1])
+        self.label6.setText(self.randev[2])
+        
+        
+        self.label7.setText("Doktorumuz seçtiğiniz saati değerlendirip sizi bilgilendirecektir.")
+        self.label7.setStyleSheet("color:red")
+        
+       
+        
+        self.cursor.execute("Update KAYITLI_KULLANICILAR set Durum='Aktif' where Kullanici_Adi=?",(window.kullanici_adi.text(),))
+        self.baglanti.commit()
+        
+    def gecmis_islemler(self):
+        self.cursor.execute("Select Onceki_islemler From KAYITLI_KULLANICILAR where Kullanici_Adi=?",(window.kullanici_adi.text(),))
+        liste=self.cursor.fetchall()
+        self.label4.setText(liste[0][0])
+        
+    def kabul_bekleyenler(self):
+        self.cursor.execute("Select İsim From KAYITLI_KULLANICILAR where Kullanici_Adi=?",(window.kullanici_adi.text(),))
+        liste1=self.cursor.fetchall()
+        self.isim=liste1[0][0]
+        
+        self.cursor.execute("Select Yeni_islem From KAYITLI_KULLANICILAR where Vasfi='Hasta'")
+        liste2=self.cursor.fetchall()
+
+      
+        indks=0
+        self.li=[self.text3,self.text6,self.text9,self.text12,self.text15]
+        for im in self.li:
+            x=-1
+            for i in liste2:  
+                x=x+1
+                if(indks==x):
+                    self.parcala=i[0].split(",")  
+                    if(self.parcala[0]==self.isim):
+                        self.yazilacak="Doktor Adı:"+self.parcala[0]+"\n"+"Geliş Amacı:"+self.parcala[1]+"\n"+"Hastanın Uygun Olduğu Saat:"+self.parcala[2]
+                        im.setPlainText(self.yazilacak)
+                    else:
+                        indks=indks+1
+            indks=indks+1       
+            
+                    
+    def hastanin_bilgileri(self):      
+        self.cursor.execute("Select İsim From KAYITLI_KULLANICILAR where Kullanici_Adi=?",(window.kullanici_adi.text(),))
+        liste1=self.cursor.fetchall()
+        self.isim=liste1[0][0]  
+        
+        self.cursor.execute("Select Yeni_islem From KAYITLI_KULLANICILAR where Vasfi='Hasta'")
+        liste2=self.cursor.fetchall()
+
+        self.cursor.execute("Select İsim,Mail_Adresi,Dogum_Tarihi From KAYITLI_KULLANICILAR where Vasfi='Hasta'")
+        liste3=self.cursor.fetchall()    
+        
+            
+        n=0
+        indks=0
+        self.li=[self.text2,self.text5,self.text8,self.text11,self.text14]
+        for yazilacakyer in self.li:
+            x=-1
+            for i in liste3: 
+                x=x+1
+                if(indks==x):             
+                    self.parcala=liste3[x] 
+                    self.parcala2=liste2[n][0].split(",")
+                    if(self.isim==self.parcala2[0]):
+                        self.yazilacak="Hasta Adı:"+self.parcala[0]+"\n"+"Hastanın Mail Adresi:"+self.parcala[1]+"\n"+"Hastanın Dogum Tarihi:"+self.parcala[2]
+                        yazilacakyer.setPlainText(self.yazilacak)
+                    else:
+                        indks=indks+1
+                        n=n+1
+            indks=indks+1 
+            n=n+1
+
+                
+
+       
+    def hastanin_gecmisi(self):
+        self.cursor.execute("Select İsim From KAYITLI_KULLANICILAR where Kullanici_Adi=?",(window.kullanici_adi.text(),))
+        liste1=self.cursor.fetchall()
+        self.isim=liste1[0][0]
+        
+        self.cursor.execute("Select Yeni_islem From KAYITLI_KULLANICILAR where Vasfi='Hasta'")
+        liste2=self.cursor.fetchall()
+        
+        self.cursor.execute("Select Onceki_islemler From KAYITLI_KULLANICILAR where Vasfi='Hasta'")
+        liste3=self.cursor.fetchall()
+
+        n=0
+        indks=0
+        self.li=[self.text1,self.text4,self.text7,self.text10,self.text13]
+        for yazilacakyer in self.li:
+            x=-1
+            for i in liste3:  
+                x=x+1
+                if(indks==x):
+                    self.parcala2=liste2[n][0].split(",")
+                    if(self.isim==self.parcala2[0]):
+                        self.yazilacak="Hastanın geçmiş işlemi:"+i[0]
+                        yazilacakyer.setPlainText(self.yazilacak)
+                    else:
+                        indks=indks+1
+                        n=n+1
+            indks=indks+1  
+            n=n+1
+            
+    def sonlandirma(self):
+        self.cursor.execute("Select Yeni_islem From KAYITLI_KULLANICILAR where Mail_Adresi=?",(self.line.text(),))
+        liste=self.cursor.fetchall()
+        self.parcala=liste[0][0].split(",")
+   
+
+        self.cursor.execute("Update KAYITLI_KULLANICILAR set Onceki_islemler=? where Mail_Adresi=?",(self.parcala[1],self.line.text(),))
+        self.baglanti.commit()
+        
+        self.cursor.execute("Update KAYITLI_KULLANICILAR set Yeni_islem=? where Mail_Adresi=?",("-,-,-,;",self.line.text(),))
+        self.baglanti.commit()
+
+        self.cursor.execute("Update KAYITLI_KULLANICILAR set Durum=? where Mail_Adresi=?",("Pasif",self.line.text(),))
+        self.baglanti.commit()
+        
+    def kesinlestirme(self):
+        mesaj=MIMEMultipart()
+        kime=self.line.text()
+        mesaj["From"]="mervelik.2328@gmail.com"
+        mesaj["To"]=kime
+        mesaj["Subject"]="Randevu Bilgisi"
+      
+        saat=self.line1.text()
+        isim=self.yazi2.text()
+        yazi="Saat"+" "+saat+" "+"da"+" "+isim+" "+"doktoruna randevunuz bulunmaktadır."
+        mesaj_gövdesi=MIMEText(yazi,"plain")
+        mesaj.attach(mesaj_gövdesi)
+        try:
+            mail=smtplib.SMTP("smtp.gmail.com",587)
+            mail.ehlo()
+            mail.starttls()
+            mail.login("mervelik.2328@gmail.com","41584136068Mm.")
+            mail.sendmail(mesaj["From"],mesaj["To"],mesaj.as_string())
+            print("Mail başarıyla gönderildi..")
+            mail.close()
+        except:
+            sys.stderr.write("Mail göndermesi başarısız oldu..")
+            sys.stderr.flush()
+        
+        
+        
+    def init_uiii(self):
+        self.yazi1=QLabel("HOŞGELDİNİZ",self)
+        self.yazi3=QLabel("Hangi hasta için işlem yapmak istiyorsanız mail adresini giriniz:")
+        self.line=QLineEdit()
+        self.line1=QLineEdit()
+        self.kesinlestir=QPushButton("Kesinleştir")#mesaj yollayacak
+        self.sonlandir=QPushButton("Sonlandır")#geçmişe atacak
+        self.yazi4=QLabel("Randevu vermek istediğiniz saat:")
+        self.kayit_gecmisi=QPushButton("Hasta Geçmişi")
+        self.hasta_bilgileri=QPushButton("Kayıttaki Hasta Bilgileri")
+        self.bekleyen_hastalar=QPushButton("Kabul Bekleyen Hasta Bilgileri")
+        self.text1=QTextEdit()
+        self.text2=QTextEdit()
+        self.text3=QTextEdit()
+        self.text4=QTextEdit()
+        self.text5=QTextEdit()
+        self.text6=QTextEdit()
+        self.text7=QTextEdit()
+        self.text8=QTextEdit()
+        self.text9=QTextEdit()
+        self.text10=QTextEdit()
+        self.text11=QTextEdit()
+        self.text12=QTextEdit()
+        self.text13=QTextEdit()
+        self.text14=QTextEdit()
+        self.text15=QTextEdit()
+        
+        self.cursor.execute("Select İsim From KAYITLI_KULLANICILAR where Kullanici_Adi=?",(window.kullanici_adi.text(),))
+        liste1=self.cursor.fetchall()
+        self.isim=liste1[0][0]
+        self.yazi2=QLabel(self.isim)
+        
+        h_box1=QHBoxLayout()
+        h_box1.addWidget(self.yazi1)
+        h_box1.addWidget(self.yazi2)
+        
+        h_box2=QHBoxLayout()
+        h_box2.addWidget(self.kayit_gecmisi)
+        h_box2.addWidget(self.hasta_bilgileri)
+        h_box2.addWidget(self.bekleyen_hastalar)
+        
+        h_box3=QHBoxLayout()
+        h_box3.addWidget(self.text1)
+        h_box3.addWidget(self.text2)
+        h_box3.addWidget(self.text3)
+        
+        h_box4=QHBoxLayout()
+        h_box4.addWidget(self.text4)
+        h_box4.addWidget(self.text5)
+        h_box4.addWidget(self.text6)
+        
+        h_box5=QHBoxLayout()
+        h_box5.addWidget(self.text7)
+        h_box5.addWidget(self.text8)
+        h_box5.addWidget(self.text9)
+        
+        h_box6=QHBoxLayout()
+        h_box6.addWidget(self.text10)
+        h_box6.addWidget(self.text11)
+        h_box6.addWidget(self.text12)
+        
+        h_box7=QHBoxLayout()
+        h_box7.addWidget(self.text13)
+        h_box7.addWidget(self.text14)
+        h_box7.addWidget(self.text15)
+        
+        h_box8=QHBoxLayout()
+        h_box8.addWidget(self.yazi3)
+        h_box8.addWidget(self.yazi4)
+        
+        h_box9=QHBoxLayout()
+        h_box9.addWidget(self.line)
+        h_box9.addWidget(self.line1)
+        
+        
+        v_box1=QVBoxLayout()
+        v_box1.addLayout(h_box1)
+        v_box1.addLayout(h_box2)
+        v_box1.addLayout(h_box3)
+        v_box1.addLayout(h_box4)
+        v_box1.addLayout(h_box5)
+        v_box1.addLayout(h_box6)
+        v_box1.addLayout(h_box7)
+        v_box1.addLayout(h_box8)
+        v_box1.addLayout(h_box9)
+        v_box1.addWidget(self.kesinlestir)
+        v_box1.addWidget(self.sonlandir)
+        self.setLayout(v_box1)
+        self.setWindowTitle("Doktor Penceresi")
+        self.bekleyen_hastalar.clicked.connect(self.kabul_bekleyenler)
+        self.hasta_bilgileri.clicked.connect(self.hastanin_bilgileri)
+        self.kayit_gecmisi.clicked.connect(self.hastanin_gecmisi)
+        self.sonlandir.clicked.connect(self.sonlandirma)
+        self.kesinlestir.clicked.connect(self.kesinlestirme)     
+
+class pencere3(QWidget):
+    def baglanti_olustur(self):
+        self.baglanti=sqlite3.connect("hastane_veritabani.db")
+        self.cursor=self.baglanti.cursor() 
+        self.cursor.execute("Create Table If not exists KAYITLI_KULLANICILAR(Kullanici_Adi INT,İsim TEXT,Telefon_Numarasi INT,Mail_Adresi TEXT,Dogum_Tarihi TEXT,Sifre TEXT,Vasfi TEXT,Durum TEXT,Onceki_islemler TEXT,Yeni_islem TEXT)")
+        self.baglanti.commit()
+    
+    def __init__(self):
+        super().__init__()       
+        self.baglanti_olustur()
+        self.init_ui()
+        
+      
+    def init_ui(self):
+        self.yazi1=QLabel("İsim Soyisim:")
+        self.ad=QLineEdit()
+        self.yazi2=QLabel("TC kimlik numarası:")
+        self.kimlik=QLineEdit()
+        self.yazi3=QLabel("Doğum Tarihi:")
+        self.dogum_tarihi=QLineEdit()
+        self.yazi4=QLabel("E-Posta Adresi:")
+        self.eposta=QLineEdit()
+        self.yazi5=QLabel("Telefon Numarası:")
+        self.telefon_numarasi=QLineEdit()
+        self.yazi6=QLabel("Şifre Oluşturun:")
+        self.sifre=QLineEdit()
+        self.checkbox1=QCheckBox("Doktor")
+        self.checkbox2=QCheckBox("Hasta")
+        self.buton1=QPushButton("Kayıt Ol")
+
+        h_box=QHBoxLayout()
+        h_box.addWidget(self.checkbox1)
+        h_box.addWidget(self.checkbox2)
+        v_box=QVBoxLayout()
+        v_box.addWidget(self.yazi1)
+        v_box.addWidget(self.ad)
+        v_box.addWidget(self.yazi2)
+        v_box.addWidget(self.kimlik)
+        v_box.addWidget(self.yazi3)
+        v_box.addWidget(self.dogum_tarihi)
+        v_box.addWidget(self.yazi4)
+        v_box.addWidget(self.eposta)
+        v_box.addWidget(self.yazi5)
+        v_box.addWidget(self.telefon_numarasi)
+        v_box.addWidget(self.yazi6)
+        v_box.addWidget(self.sifre)
+        v_box.addLayout(h_box)
+        v_box.addWidget(self.buton1)
+        self.setLayout(v_box)       
+        self.setWindowTitle("Kayıt Penceresi")      
+        self.buton1.clicked.connect(lambda: self.kayit1(self.checkbox1.isChecked()))
+        self.buton1.clicked.connect(lambda: self.kayit2(self.checkbox2.isChecked()))
+
+    def kayit1(self,checkbox1):
+        if checkbox1:
+            self.cursor.execute("Insert Into KAYITLI_KULLANICILAR(Kullanici_Adi,İsim,Telefon_Numarasi,Mail_Adresi,Dogum_Tarihi,Sifre,Vasfi,Yeni_islem) values(?,?,?,?,?,?,?,?)",(self.kimlik.text(),self.ad.text(),self.telefon_numarasi.text(),self.eposta.text(),self.dogum_tarihi.text(),self.sifre.text(),self.checkbox1.text(),'-,-,-,;',))
+            self.baglanti.commit()
+
+    def kayit2(self,checkbox2):
+        if checkbox2:
+            self.cursor.execute("Insert Into KAYITLI_KULLANICILAR(Kullanici_Adi,İsim,Telefon_Numarasi,Mail_Adresi,Dogum_Tarihi,Sifre,Vasfi,Yeni_islem) values(?,?,?,?,?,?,?,?)",(self.kimlik.text(),self.ad.text(),self.telefon_numarasi.text(),self.eposta.text(),self.dogum_tarihi.text(),self.sifre.text(),self.checkbox2.text(),'-,-,-,;',
+                                                                                                                                                                                 ))
+            self.baglanti.commit()
+            
+class pencere1(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.baglanti_olustur()
+        self.init_ui()
+        
+    def baglanti_olustur(self):
+        self.baglanti=sqlite3.connect("hastane_veritabani.db")
+        self.cursor=self.baglanti.cursor()
+        self.cursor.execute("Create Table If not exists KAYITLI_KULLANICILAR(Kullanici_Adi INT,İsim TEXT,Telefon_Numarasi INT,Mail_Adresi TEXT,Dogum_Tarihi TEXT,Sifre TEXT,Vasfi TEXT,Durum TEXT,Onceki_islemler TEXT,Yeni_islem TEXT)")     
+        self.baglanti.commit()
+        
+    def init_ui(self):
+        self.yazi=QLabel("             ÖZEL MERVE HASTANESİ")
+        self.yazi1=QLabel("Kullanıcı Adı:      ")
+        self.kullanici_adi=QLineEdit()
+        self.buton=QPushButton("Giriş Yap")
+        self.yazi2=QLabel("Şifre:                ")
+        self.sifre=QLineEdit()
+        self.label=QLabel()
+        self.yazi3=QLabel("                 Kayıtlı değil misiniz?")
+        self.yazi3.setStyleSheet("color:blue")
+        self.buton1=QPushButton("Kayıt Ol")
+        
+        
+        h_box1=QHBoxLayout()
+        h_box1.addWidget(self.yazi1)
+        h_box1.addWidget(self.kullanici_adi)
+        h_box2=QHBoxLayout()
+        h_box2.addWidget(self.yazi2)
+        h_box2.addWidget(self.sifre) 
+        v_box=QVBoxLayout()
+        v_box.addWidget(self.yazi)
+        v_box.addLayout(h_box1)
+        v_box.addLayout(h_box2)
+        v_box.addWidget(self.label)
+        v_box.addWidget(self.buton)
+        v_box.addWidget(self.yazi3)
+        v_box.addWidget(self.buton1)
+        self.setLayout(v_box)
+        self.setWindowTitle("Kullanıcı Girişi")
+        self.buton.clicked.connect(self.giris)
+        self.buton1.clicked.connect(self.kayit)
+        self.show()
+       
+    
+
+    def giris(self):
+        self.cursor.execute("Select Sifre From KAYITLI_KULLANICILAR where Kullanici_Adi=?",(window.kullanici_adi.text(),))
+        liste=self.cursor.fetchall()
+        print(liste[0][0])
+        if(liste[0][0]==self.sifre.text()):
+            self.window2 =pencere2()
+            self.window2.show()
+            self.hide()
+        else:
+            self.label.setText("              Şifrenizi yanlış girdiniz.")
+            self.label.setStyleSheet("color:red")
+        
+    
+    def kayit(self):
+        self.window3=pencere3()
+        self.window3.show()
+        self.hide()
+        
+app = QApplication(sys.argv)
+window = pencere1()
+sys.exit(app.exec())
+</pre>
+</div>            
+        
+<div class="ic_kisim">
+<h3>Fotoğraf ayarları</h3>
+<pre>
+from PIL import Image,ImageFilter
+import sys
+
+
+from PyQt5.QtWidgets import QWidget,QCheckBox,QApplication,QPushButton,QVBoxLayout
+
+class Pencere(QWidget):
+    def __init__(self):
+        super(). __init__()
+        self.init_ui()
+    
+    def init_ui(self):
+        self.checkbox1=QCheckBox("Resmi 180 derece döndürmek istermisin?")
+        self.checkbox2=QCheckBox("Resmi 90 derece döndürmek ister misin?")
+        self.checkbox3=QCheckBox("Resmi siyah beyaz renge dönüştürmek ister misin?")
+        self.checkbox4=QCheckBox("Resmin boyutunu değiştirmek ister misin?")
+        self.checkbox5=QCheckBox("Resmi bulanıklaştırmak ister misin?")
+        self.checkbox6=QCheckBox("Resmi kırpmak ister misin?") 
+        self.buton=QPushButton("OK")
+        
+        v_box=QVBoxLayout()
+        v_box.addWidget(self.checkbox1)
+        v_box.addWidget(self.checkbox2)
+        v_box.addWidget(self.checkbox3)
+        v_box.addWidget(self.checkbox4)
+        v_box.addWidget(self.checkbox5)
+        v_box.addWidget(self.checkbox6)
+        v_box.addWidget(self.buton)
+        self.setLayout(v_box)
+        self.setWindowTitle("Fotoğraf İşlemleri")
+        self.buton.clicked.connect(lambda: self.fnk1(self.checkbox1.isChecked()))
+        self.buton.clicked.connect(lambda: self.fnk2(self.checkbox2.isChecked()))
+        self.buton.clicked.connect(lambda: self.fnk3(self.checkbox3.isChecked()))
+        self.buton.clicked.connect(lambda: self.fnk4(self.checkbox4.isChecked()))
+        self.buton.clicked.connect(lambda: self.fnk5(self.checkbox5.isChecked()))
+        self.buton.clicked.connect(lambda: self.fnk6(self.checkbox6.isChecked()))
+       
+        self.show()
+        
+    def fnk1(self,checkbox1):
+        if checkbox1:
+            image=Image.open("biz.jpg")
+            image.rotate(180).save("biz.jpg")
+        
+    def fnk2(self,value):
+        if value:
+            image=Image.open("biz.jpg")
+            image.rotate(90).save("biz.jpg")
+        
+    def fnk3(self,value):
+        if value:
+            image=Image.open("biz.jpg")
+            image.convert(mode="L").save("biz.jpg")
+        
+    def fnk4(self,value):
+        if value:
+            image=Image.open("biz.jpg")
+            image.thumbnail((400,400))
+            image.save("biz.jpg")
+        
+    def fnk5(self,value):
+        if value:
+            image=Image.open("biz.jpg")
+            image.filter(ImageFilter.GaussionBlur(500)).save("biz.jpg")
+        
+        
+    def fnk6(self,value):
+        if value:
+            image=Image.open("biz.jpg")
+    
+            image.crop((340,0,950,600)).save("biz.jpg")
+        
+        
+app=QApplication(sys.argv)
+pencere=Pencere()
+sys.exit(app.exec_())       
+        
+</pre>
+</div>    
+
+
+<div class="ic_kisim"  >
+<h3>Bankamatik projesi</h3>
+<pre>
+import sqlite3
+import sys
+from PyQt5.QtWidgets import QWidget,QLabel,QApplication,QTextEdit,QLineEdit,QPushButton,QVBoxLayout,QHBoxLayout
+
+class bankamatik(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.baglantı_olustur()
+        self.init_ui()
+        
+    def baglantı_olustur(self):
+        self.baglanti=sqlite3.connect("databasee.db")
+        self.cursor=self.baglanti.cursor()
+        self.cursor.execute("Create Table If not exists müşteriler(isim TEXT,parola TEXT,bakiye INT,iban TEXT)")
+        self.baglanti.commit()
+        
+    def init_ui(self):
+        self.yazi=QLabel("Kullanıcı Adı:      ")
+        self.kullanici_adi=QLineEdit()
+        self.yazi1=QLabel("Şifre:                ")
+        self.sifre=QLineEdit()
+        self.yazi2=QLabel("İban:                 ")
+        self.iban=QLineEdit()
+        self.bakiye=QPushButton("Bakiye Sorgulama")
+        self.para_cek=QPushButton("Para çekme")
+        self.para_yatir=QPushButton("Para yatırma")
+        self.baska_yatir=QPushButton("Başka Hesaba Para Yatırma")  
+        self.yazi_alani=QTextEdit()
+        self.yazi3=QLabel("Parayı Girin:            ")
+        self.islemler=QLineEdit()
+        self.yazi4=QLabel("Göndereceğiniz İban:")
+        self.baskahesap_iban=QLineEdit()
+        h_box=QHBoxLayout()
+        h_box.addWidget(self.bakiye)
+        h_box.addWidget(self.para_cek)
+        h_box.addWidget(self.para_yatir)
+        h_box.addWidget(self.baska_yatir)
+        
+        h_box2=QHBoxLayout()
+        h_box2.addWidget(self.yazi)
+        h_box2.addWidget(self.kullanici_adi)
+        
+        h_box3=QHBoxLayout()
+        h_box3.addWidget(self.yazi1)
+        h_box3.addWidget(self.sifre)
+        
+        h_box4=QHBoxLayout()
+        h_box4.addWidget(self.yazi2)
+        h_box4.addWidget(self.iban)
+        
+        h_box5=QHBoxLayout()
+        h_box5.addWidget(self.yazi3)
+        h_box5.addWidget(self.islemler)
+        
+        h_box6=QHBoxLayout()
+        h_box6.addWidget(self.yazi4)
+        h_box6.addWidget(self.baskahesap_iban)
+        
+        v_box=QVBoxLayout()
+        v_box.addLayout(h_box2)
+        v_box.addLayout(h_box3)
+        v_box.addLayout(h_box4)
+        v_box.addLayout(h_box)
+        v_box.addWidget(self.yazi_alani)
+        v_box.addLayout(h_box5)
+        v_box.addLayout(h_box6)
+        
+      
+        self.setLayout(v_box)
+        self.setWindowTitle("Bankamatik")
+        self.bakiye.clicked.connect(self.bakiye_ogren)
+        self.para_cek.clicked.connect(self.para_cekme)
+        self.para_yatir.clicked.connect(self.para_yatirma)
+        self.baska_yatir.clicked.connect(self.baska_yatirma)
+        self.show()
+    def bakiye_ogren(self,liste):
+        self.cursor.execute("Select isim,parola From müşteriler where iban=?",(self.iban.text(),))
+        liste2=self.cursor.fetchall()
+        for j in liste2:
+            demet=j
+            
+        if(self.kullanici_adi.text()!=demet[0] and self.sifre.text()==demet[1]):
+            self.yazi_alani.setText("Kullanıcı adı hatalı!")
+        elif(self.kullanici_adi.text()==demet[0] and self.sifre.text()!=demet[1]):
+            self.yazi_alani.setText("Parola hatalı!")
+        elif(self.kullanici_adi.text()!=demet[0] and self.sifre.text()!=demet[1]):
+            self.yazi_alani.setText("Kullanıcı adı ve parola hatalı!")
+        else:
+            self.cursor.execute("Select bakiye From müşteriler where iban=?",(self.iban.text(),))
+            liste=self.cursor.fetchall()
+            for i in liste:
+                self.yazi_alani.setText(str(i[0]))
+  
+    def para_cekme(self):
+        self.cursor.execute("Select isim,parola From müşteriler where iban=?",(self.iban.text(),))
+        liste2=self.cursor.fetchall()
+        for j in liste2:
+            demet=j
+            
+        if(self.kullanici_adi.text()!=demet[0] and self.sifre.text()==demet[1]):
+            self.yazi_alani.setText("Kullanıcı adı hatalı!")
+        elif(self.kullanici_adi.text()==demet[0] and self.sifre.text()!=demet[1]):
+            self.yazi_alani.setText("Parola hatalı!")
+        elif(self.kullanici_adi.text()!=demet[0] and self.sifre.text()!=demet[1]):
+            self.yazi_alani.setText("Kullanıcı adı ve parola hatalı!")
+        else:   
+            self.cursor.execute("Select bakiye From müşteriler where iban=?",(self.iban.text(),))
+            liste=self.cursor.fetchall()
+            for i in liste:
+                yeni_para=i[0]-int(self.islemler.text())  
+            if(yeni_para<0):
+                self.yazi_alani.setText("Yetersiz bakiye..")
+            else:   
+                self.cursor.execute("Update müşteriler set bakiye=? where iban=?",(yeni_para,self.iban.text()))
+                self.baglanti.commit()
+        
+    def para_yatirma(self):
+        self.cursor.execute("Select isim,parola From müşteriler where iban=?",(self.iban.text(),))
+        liste2=self.cursor.fetchall()
+        for j in liste2:
+            demet=j
+            
+        if(self.kullanici_adi.text()!=demet[0] and self.sifre.text()==demet[1]):
+            self.yazi_alani.setText("Kullanıcı adı hatalı!")
+        elif(self.kullanici_adi.text()==demet[0] and self.sifre.text()!=demet[1]):
+            self.yazi_alani.setText("Parola hatalı!")
+        elif(self.kullanici_adi.text()!=demet[0] and self.sifre.text()!=demet[1]):
+            self.yazi_alani.setText("Kullanıcı adı ve parola hatalı!")
+        else:    
+            self.cursor.execute("Select bakiye From müşteriler where iban=?",(self.iban.text(),))
+            liste=self.cursor.fetchall()
+            for i in liste:
+                yeni_para=i[0]+int(self.islemler.text())
+            self.cursor.execute("Update müşteriler set bakiye=? where iban=?",(yeni_para,self.iban.text()))
+            self.baglanti.commit()
+        
+    def baska_yatirma(self):
+        self.cursor.execute("Select isim,parola From müşteriler where iban=?",(self.iban.text(),))
+        liste2=self.cursor.fetchall()
+        for j in liste2:
+            demet=j
+            
+        if(self.kullanici_adi.text()!=demet[0] and self.sifre.text()==demet[1]):
+            self.yazi_alani.setText("Kullanıcı adı hatalı!")
+        elif(self.kullanici_adi.text()==demet[0] and self.sifre.text()!=demet[1]):
+            self.yazi_alani.setText("Parola hatalı!")
+        elif(self.kullanici_adi.text()!=demet[0] and self.sifre.text()!=demet[1]):
+            self.yazi_alani.setText("Kullanıcı adı ve parola hatalı!")
+        else:   
+         
+            self.cursor.execute("Select bakiye From müşteriler where iban=?",(self.iban.text(),))
+            liste=self.cursor.fetchall()
+            for i in liste:
+                yeni_para=i[0]-int(self.islemler.text())
+            if(yeni_para<0):
+               self.yazi_alani.setText("Yetersiz bakiye")
+            else:
+                self.cursor.execute("Update müşteriler set bakiye=? where iban=?",(yeni_para,self.iban.text()))
+                self.baglanti.commit()
+         
+                self.cursor.execute("Select bakiye From müşteriler where iban=?",(self.baskahesap_iban.text(),))
+                liste2=self.cursor.fetchall()
+                for i in liste2:
+                    yeni_para2=i[0]+int(self.islemler.text())
+                self.cursor.execute("Update müşteriler set bakiye=? where iban=?",(yeni_para2,self.baskahesap_iban.text()))
+                self.baglanti.commit()
+         
+app=QApplication(sys.argv)
+bankamatikk=bankamatik()
+sys.exit(app.exec_())
+</pre>
+</div>           
+
+
+<div class="ic_kisim">
+<h3>Takılmış olan USB bilgilerini görüntüleme</h3>
+<pre>
+import sys
+from PyQt5.QtWidgets import QWidget,QApplication,QTextEdit,QPushButton,QVBoxLayout
+
+
+class flash_disk_bilgisi(QWidget):
+
+    def __init__(self):
+        super().__init__() 
+        self.icerik()
+
+    def icerik(self):
+        self.goruntuleme_butonu=QPushButton("Takılmış olan USB'ler")
+        self.takilma_cikarma_zamani=QPushButton("Tarih Ve Zaman Bilgileri")
+        self.seri_numara=QPushButton("Seri Numarası")
+        self.text1=QTextEdit()  
+        v_box=QVBoxLayout()
+        v_box.addWidget(self.goruntuleme_butonu)
+        v_box.addWidget(self.takilma_cikarma_zamani)
+        v_box.addWidget(self.seri_numara)
+        v_box.addWidget(self.text1)
+        self.setLayout(v_box)
+        self.setWindowTitle("USB Bilgilerini Edinme")
+        self.goruntuleme_butonu.clicked.connect(self.genel_bilgi)
+        self.takilma_cikarma_zamani.clicked.connect(self.giris_cikis_zamanlari)
+        self.seri_numara.clicked.connect(self.seri_numarasi)
+        self.show()
+        
+    def genel_bilgi(self):
+       self.marka_listesi=list()
+       self.tarih_saat_listesi=list()
+       with open("takma.txt","r",encoding="utf-8") as file:
+           for satir in file:
+               satir=satir[:-1]
+               satir_elemanlari=satir.split("\t")
+               if(satir_elemanlari[0]=="Bilgi"):
+                   self.yeni_liste=satir_elemanlari[5].split("VEN")
+                   self.yeni_liste=self.yeni_liste[1]
+                   self.yeni_liste=self.yeni_liste.lstrip("_")
+                   self.yeni_liste=self.yeni_liste.lstrip("USB&PROD")
+                   self.yeni_liste=self.yeni_liste.lstrip("_")
+                   self.yeni_liste=self.yeni_liste.split("&REV")
+                   self.yeni_liste=self.yeni_liste[0]
+                   self.marka_listesi.append(self.yeni_liste)
+                   self.tarih_saat_listesi.append(satir_elemanlari[1])
+       self.ortak_liste=list()
+       n=0
+       for i in self.marka_listesi:
+           self.ortak_liste.append(i+"             "+self.tarih_saat_listesi[n])
+           n=n+1
+       self.ortak_liste="\n".join(self.ortak_liste)
+       self.text1.setPlainText(self.ortak_liste)
+     
+       
+    def giris_cikis_zamanlari(self):
+        self.giris_listesi=list()
+        self.cikis_listesi=list()
+        with open("takma.txt","r",encoding="utf-8") as file:
+            for satir in file:
+                satir=satir[:-1]
+                satir_elemanlari=satir.split("\t") 
+                self.giris_listesi.append(satir_elemanlari[1])
+        self.giris_listesi.remove("Tarih ve Saat")
+        self.giris_listesi.insert(0,"USB Giriş Zamanları")
+        
+        with open("çıkarma.txt","r",encoding="utf-8") as file:
+            for satir in file:
+                satir=satir[:-1]
+                satir_elemanlari=satir.split("\t") 
+                if(satir_elemanlari[0]=="Bilgi"):
+                    self.liste=satir_elemanlari[5].split(")")
+                    if(self.liste[0]=="Bitmiş bir Pnp veya Güç işlemi (27, 23"):
+                        self.cikis_listesi.append(satir_elemanlari[1])          
+              
+        self.cikis_listesi.insert(0,"USB Çıkış Zamanları")  
+        
+        self.ortak_liste=list()
+        n=0
+        for i in self.giris_listesi:
+            self.ortak_liste.append(i+"    "+self.cikis_listesi[n])
+            n=n+1
+        self.ortak_liste="\n".join(self.ortak_liste)
+        self.text1.setPlainText(self.ortak_liste)
+                
+                    
+       
+    def seri_numarasi(self):
+        self.liste=list()
+        self.seri_nu=list()
+        with open("takma.txt","r",encoding="utf-8") as file:
+            for satir in file:
+                satir=satir[:-1]
+                satir_elemanlari=satir.split("\t")
+                if(satir_elemanlari[0]=="Bilgi"):
+                    self.liste=satir_elemanlari[5].split("#")
+                    self.liste=self.liste[2]     
+                    self.seri_nu.append(self.liste)
+            self.seri_nu="\n".join(self.seri_nu)
+            self.text1.setPlainText(self.seri_nu)
+            
+        
+       
+app = QApplication(sys.argv)
+usb_bilgi = flash_disk_bilgisi()
+sys.exit(app.exec())
+</pre>
+</div>
+
+
+<div class="ic_kisim">
+<h3>Bilgisayarda oturum açılmaya çalışıldığında giriş bilgilerini mail gönderme</h3>
+<pre>
+import sys
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+class oturum_acma_bilgisi():
+
+    def __init__(self):
+        super().__init__() 
+        self.hatalar()
+        self.ekrana_yazdirma()
+        self.mail_gonderme()
+        
+    def hatalar(self):
+       self.liste=list()
+       with open("hatalar.txt","r",encoding="utf-8") as file:
+           for satir in file:
+               satir=satir[:-1]
+               satir_elemanlari=satir.split("\t")
+               bilgi=satir_elemanlari[0]
+               if(bilgi=="Bilgi"):
+                   self.liste.append(satir_elemanlari[1])
+       self.liste="\n".join(self.liste)
+        
+        
+    def ekrana_yazdirma(self):
+        print("Açık kimlik bilgileri kullanılarak oturum açılmaya çalışıldı.")
+        print(self.liste)
+        
+    def mail_gonderme(self):
+        mesaj=MIMEMultipart()
+        mesaj["From"]="9890merve9890@gmail.com"
+        mesaj["To"]="9890merve9890@gmail.com"
+        mesaj["Subject"]="Oturum Açma Bilgisi"
+      
+        yazi="Açık kimlik bilgileri kullanılarak oturum açılmaya çalışıldı."+"\n"+self.liste
+        mesaj_govdesi=MIMEText(yazi,"plain")
+        mesaj.attach(mesaj_govdesi)
+        try:
+            mail=smtplib.SMTP("smtp.gmail.com",587)
+            mail.ehlo()
+            mail.starttls()
+            mail.login("9890merve9890@gmail.com","123456w.")
+            mail.sendmail(mesaj["From"],mesaj["To"],mesaj.as_string())
+            print("Mail başarıyla gönderildi.")
+            mail.close()
+        except:
+            sys.stderr.write("Mail göndermesi başarısız oldu.")
+            sys.stderr.flush()
+
+
+giris = oturum_acma_bilgisi()
+</pre>
+</div>    
+            
+            
+            
+
+
+
+
+</body>
+
+</html>

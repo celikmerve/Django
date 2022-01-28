@@ -1,0 +1,2154 @@
+<!doctype html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+        .d-menu{
+            background:#333;
+            width: 300px;
+            height:721px;
+            margin-top:-50px;
+            margin-left:-8px;
+            position:fixed;
+        }
+        .d-menu ul {
+           list-style:none;
+        }
+        .d-menu ul{
+            margin: 0;
+            padding:0;
+        }
+        .d-menu ul li a{
+            color:#E0E0E0;
+            text-align:left;
+            padding:15px;
+            padding-left:35px;
+            display: block;
+            border-bottom:1px solid #282828;
+            text-decoration:none;
+        }
+        .d-menu ul li ul {
+            display:none;
+        }
+        .d-menu ul li:hover ul {
+            display:block;
+            position:absolute;
+            margin:-56px 0 0 300px;
+        }
+        .d-menu ul li ul li a {
+            padding:10px;
+            font-size:15px;
+            width:170px;
+            background-color:#282828;
+            border-bottom:1px solid #222;
+        }
+        .d-menu ul li a:hover {
+            background-color:#424242;
+            color:#fff;
+            transition:all .3s ease-in-out;
+            text-decoration:none;
+        }
+        .k-menu{
+            background:#333;
+            width:190px;
+            height:76px;
+            margin-left:-8px;
+            margin-top:-68px;
+            position:fixed;
+          }
+          .k-menu ul {
+            list-style:none;
+          }
+          .k-menu ul{
+             margin: 0;
+             padding:0;
+          }
+          .k-menu li a{
+             color:#E0E0E0;
+             text-align:left;
+             padding:15px;
+             padding-left:35px;
+             display: block;
+             border-bottom:1px solid #282828;
+             text-decoration:none;
+          }
+          .k-menu li ul {
+             display:none;
+          }
+          .k-menu li:hover li ul {
+             display:none;
+          }
+          .k-menu li:hover ul {
+             display:block;
+             background:#333;
+          }
+          .k-menu ul li:hover ul {
+             display:block;
+             position:absolute;
+             margin:-53px 0 0 190px;
+          }
+          .k-menu ul li ul li a {
+             padding:10px;
+             width:136px;
+             background-color:#282828;
+             border-bottom:1px solid #222;
+          }
+          .k-menu ul li a:hover {
+             background-color:#424242;
+             color:#fff;
+             transition:all .3s ease-in-out;
+             text-decoration:none;
+          }
+          .k-menu li a:hover {
+             background-color:#424242;
+             color:#fff;
+             transition:all .3s ease-in-out;
+             text-decoration:none;
+          }
+          @media only screen and (min-width:577px){
+          .k-menu,nav ul{display:none;}
+          }
+          @media only screen and (max-width:576px){
+          .d-menu,div ul{display:none;}
+          .k-menu ul li a{padding-left:19px; padding-right:19px;}
+          }
+    
+  .ic_kisim{
+    height:300px;
+    width:700px;
+    overflow:scroll;
+    background-color:#f2f2f2;
+    padding-left:10px;
+    margin-left:350px;
+    margin-top:50px;
+    margin-bottom:50px;
+    border-radius:15px;
+
+    
+
+
+</style>
+
+<title>
+Örnekler
+</title>
+</head>
+
+<body>
+
+
+
+	<div class="d-menu d-sm-none d-lg-block sticky-top" >
+        <ul class=" d-sm-none d-lg-block sticky-top">
+            <li ><a href="/index"><font size="5"><i><b>Ana Sayfa</a></b></i></font></li>
+            <li class="açılırmenü2" ><a href="/Kullanim_Klavuzlari"><font size="5"><i><b>Adli Bilişim</a></b></i></font>
+	        <ul>
+		       <li><a  href="/Kullanim_Klavuzlari"><font size="4"><b><i>Kullanım Klavuzları</b></i></a></font></li>
+		       <li><a href="/Notlar"><font size="4"><b><i>Notlar</b></i></a></font></li>
+		    </ul>
+            </li>
+            <li class="açılırmenü2" ><a href="/Python"><font size="5"><i><b>Yazılım</a></b></i></font>
+            <ul>
+               <li><a  href="/Python"><font size="4"><b><i>Python</b></i></a></font></li>
+               <li><a href="/veri_yapilari"><font size="4"><b><i>Veri Yapıları</b></i></a></font></li>
+            </ul>
+            </li>
+			<li ><a href="/Siber_Ataklar"><font size="5"><i><b>Siber Ataklar</a></b></i></font></li>
+			{% if request.user.is_authenticated %}
+			    <li ><a href="/articles/dashboard"><font size="5"><i><b>Kontrol Paneli</a></b></i></font></li>
+			    <li ><a href="/user/logout"><font size="5"><i><b>Çıkış Yap</a></b></i></font></li>
+		    {%else%}	
+		        <li ><a href="/user/login"><font size="5"><i><b>Giriş Yap</a></b></i></font></li>
+		    {%endif%}
+			    <li ><a href="/user/register"><font size="5"><i><b>Kayıt Ol</a></b></i></font></li>
+        </ul>
+        </div>
+    
+		<div class="k-menu" >
+			<li  ><a href="/Python"><font size="5"><b>Menüler</a></b></font>
+				<ul>
+					<li ><a href="/index"><font size="4"><i><b>Ana Sayfa</a></b></i></font></li>
+					
+					<li class="açılırmenü2" ><a href="/Kullanim_Klavuzlari"><font size="4"><i><b>Adli Bilişim</a></b></i></font>
+					<ul>
+					   <li><a  href="/Kullanim_Klavuzlari"><font size="3"><b><i>Kullanım Klavuzları</b></i></a></font></li>
+					   <li><a href="/Notlar"><font size="3"><b><i>Notlar</b></i></a></font></li>
+					</ul>
+					</li>
+					
+					<li class="açılırmenü2" ><a href="/Python"><font size="4"><i><b>Yazılım</a></b></i></font>
+					<ul>
+					   <li><a  href="/Python"><font size="3"><b><i>Python</b></i></a></font></li>
+					   <li><a href="/veri_yapilari"><font size="3"><b><i>Veri Yapıları</b></i></a></font></li>
+					</ul>
+					</li>
+	
+				<li ><a href="/Siber_Ataklar"><font size="4"><i><b>Siber Ataklar</a></b></i></font></li>
+				{% if request.user.is_authenticated %}
+					<li ><a href="/articles/dashboard"><font size="4"><i><b>Kontrol Paneli</a></b></i></font></li>
+					<li ><a href="/user/logout"><font size="4"><i><b>Çıkış Yap</a></b></i></font></li>
+				{%else%}
+					<li ><a href="/user/login"><font size="4"><i><b>Giriş Yap</a></b></i></font></li>
+				{%endif%}
+				<li ><a href="/user/register"><font size="4"><i><b>Kayıt Ol</a></b></i></font></li>
+				</ul>
+			</li>
+		</div>  
+    
+<div class="ic_kisim">
+<h3>Çift yönlü bağlı liste</h3>
+<pre>
+
+#include<stdlib.h>
+#include<iostream>
+    
+using namespace std;
+class Node
+{
+    public:
+        int koordinatx;
+        int koordinaty;
+    
+        Node* next;
+        Node* onceki;
+            
+        Node()
+        {
+            koordinatx=0;
+            koordinaty=0;
+        }
+        Node(int x,int y)
+        {
+            koordinatx=x;
+            koordinaty=y;
+        }
+};
+    
+class List
+{
+    private:
+        Node* head;
+    public:
+        List()
+        {
+            head= NULL;	
+        }
+        void basa_ekle(int x,int y);
+        void sona_ekle(int x,int y);
+        void araya_ekle(int x,int y,int sira);
+        void sirali_ekle(int x,int y);
+        void listele();
+        void bastan_sil();
+        bool bos_mu();
+        void sondan_sil();
+        void aradan_sil(int sira);/*istenilen siradakini siler*/
+        void sil(int x,int y);/*istenilen sayiyi siler*/
+        int kac_tane();
+};
+bool List::bos_mu()
+{
+    if(head==NULL)
+        return true;
+    return false;
+}
+    
+int List::kac_tane()
+{
+    int sayac=1;
+    Node* temp=head;
+    while(temp->next!=NULL)
+    {
+        temp=temp->next;
+        sayac=sayac+1;
+    }
+    cout<<sayac<<endl;
+}
+    
+void List::basa_ekle(int x,int y)
+{
+    Node* eleman=new Node(x,y);
+    eleman->next=head;
+    eleman->onceki=NULL;
+    if(eleman->next!=NULL)
+        eleman->next->onceki=eleman;
+    head=eleman;
+}
+    
+void List::sona_ekle(int x,int y)
+{
+    if(head==NULL)
+    {
+    basa_ekle(x,y);
+    }
+    else
+    {
+        Node* temp=head;
+        while(temp->next != NULL)
+        {
+            temp=temp->next;
+        }
+        Node* eleman=new Node(x,y);
+        eleman->next=NULL;
+        temp->next=eleman;
+        eleman->onceki=temp;
+    }
+}
+    
+void List::araya_ekle(int x,int y,int sira)
+{
+    if(sira==1)
+        basa_ekle(x,y);
+    else
+        {
+                
+            Node* temp=head;
+            int i=1;
+            while(i<sira-1&&temp->next!=NULL)
+            {
+                temp=temp->next;
+                i=i+1;
+            }
+            if(i=sira-1)
+            {
+                Node* eleman=new Node(x,y);
+                eleman->next=temp->next;
+                temp->next=eleman;
+                eleman->onceki=temp;
+                eleman->next->onceki=eleman;
+            }
+            else
+            {
+                sona_ekle(x,y);/*�y�e bir s�ra yok yazd�r�labilir*/
+            }
+        }
+}
+    
+void List::sirali_ekle(int x,int y)
+{
+    if(bos_mu()||head->koordinatx >x)
+    {
+        basa_ekle(x,y);
+    }
+    else
+    {
+        Node* temp=head;
+        while(temp->next!=NULL && temp->next->koordinatx< x)
+        {
+            temp=temp->next;
+        }
+        Node* eleman=new Node(x,y);
+        eleman->next=temp->next;
+        temp->next=eleman;
+        eleman->onceki=temp;
+        eleman->next->onceki=eleman;
+    }
+}
+    
+void List::listele()
+{
+    if(head!=NULL)
+    {
+        Node* temp=head;
+        while(temp!=NULL)	 
+        {
+            cout<<temp->koordinatx<<","<<temp->koordinaty<<" ";
+            temp=temp->next;
+        }
+    }
+}
+    
+void List::bastan_sil()
+{
+    Node* temp=head;
+    head=head->next;
+    head->onceki=NULL;
+    head->next->onceki=head;
+    delete temp;
+}
+    
+void List::sondan_sil()
+{
+    if(head==NULL)
+    {
+        cout<<"Liste bos";
+    }
+    else if(head->next==NULL)
+    {
+        head=NULL;/*bastan_sil*/
+    }
+    else
+    {
+        Node* temp=head;
+        while(temp->next->next!=NULL)
+        {
+            temp=temp->next;
+        }
+    delete temp->next;
+    temp->next=NULL;
+    }
+}
+    
+void List::sil(int x,int y)
+{
+    if(head->koordinatx==x&&head->koordinaty==y)
+    {
+        bastan_sil();
+    }
+    else
+    {
+        Node* temp=head;
+        while(temp->next!=NULL&&temp->next->koordinatx!=x&&temp->next->koordinaty!=y)
+        {
+            temp=temp->next;
+        }
+        if(temp->next->koordinatx==x&&temp->next->koordinaty==y)
+        {
+            Node* silinecek=temp->next;
+            temp->next=temp->next->next;
+            delete silinecek;
+            temp->next->onceki=temp;
+        }
+        else
+        {
+            cout<<"Aranan eleman bulunamad�";
+        }
+    }
+}
+    
+void List::aradan_sil(int sira)
+{
+    if(bos_mu())
+    {
+        cout<<"Listede eleman yok";
+    }
+    else if(sira==1)
+        bastan_sil();
+        
+    else
+    {
+        Node* temp=head;
+        int i=1;
+        while(i<sira-1&&temp->next!=NULL)
+        {
+            temp=temp->next;
+            i=i+1;
+        }
+        if(i==sira-1)
+        {
+            Node* silinecek=temp->next;
+            temp->next=silinecek->next;
+            temp->next->onceki=temp;
+            delete silinecek;
+        }
+        else
+        cout<<"listede oyle bir sira yok.";
+    }         
+}
+    
+int main()
+{
+    List liste;
+    liste.basa_ekle(5,4);
+    liste.basa_ekle(7,7);
+    liste.basa_ekle(45,8);
+    liste.basa_ekle(54,5);
+    liste.listele(); 
+    cout endl;
+    liste.aradan_sil(2);
+    liste.listele();
+    cout endl;
+    liste.kac_tane();
+}
+</pre>  
+</div>
+
+
+<div class="ic_kisim">
+<h3>Soru1</h3>
+<pre>
+#include<stdlib.h>
+#include<iostream>
+
+using namespace std;
+class DOS_SIS_
+{
+	public:
+		long int klas_no;
+		long int dos_no;
+		DOS_SIS_* Adres;
+		
+		DOS_SIS_()
+		{
+			klas_no=1;
+			dos_no=1;
+		}
+		
+		DOS_SIS_(int x,int y):klas_no(1),dos_no(1)
+		{
+			klas_no=x;
+			dos_no=y;
+		}
+	
+};
+
+class Liste
+{
+	private:
+		DOS_SIS_* head;
+	public:
+		List()
+		{
+			head= NULL;	
+		}
+		
+		bool bosmu();
+     	void basa_ekle(int X,int y);
+     	void sona_ekle(int x,int y);
+     	void listele();
+};
+
+bool Liste::bosmu()
+{
+	if(head==NULL)
+	     return true;
+    return false;
+}
+     	
+     	
+void Liste::basa_ekle(int x,int y)
+{
+	DOS_SIS_* eleman=new DOS_SIS_(x,y);
+	eleman->Adres=head;
+	head=eleman;
+}
+
+void Liste::sona_ekle(int x,int y)
+{
+	if(head==NULL)
+	{
+	basa_ekle(x,y);
+    }
+	else
+	{
+		DOS_SIS_* temp=head;
+		while(temp->Adres!= NULL)
+		{
+			temp=temp->Adres;
+		}
+		DOS_SIS_* eleman=new DOS_SIS_();
+		eleman->Adres=NULL;
+		temp->Adres=eleman;
+	}
+}
+
+void Liste::listele()
+{
+	if(head!=NULL)
+	{
+		DOS_SIS_* temp=head;
+    	while(temp!=NULL)	 
+    	{
+    		cout<<temp->dos_no<<" ";
+    		temp=temp->Adres;
+		}
+	}
+}  	
+
+
+
+int main()
+{
+	Liste lis1;
+		
+		lis1.basa_ekle(1,203);
+		lis1.basa_ekle(1,202);
+		lis1.basa_ekle(1,201);
+		lis1.listele();
+	
+	}       
+</pre>
+</div>
+
+
+<div class="ic_kisim">
+<h3>Soru2</h3>
+<pre>
+#include<stdlib.h>
+#include<iostream>
+#include <math.h>
+using namespace std;
+class node
+{
+	public:
+		int data1,data2;
+		node* next;
+		
+		node()
+		{
+			data1=0;
+			data2=0;
+		}
+		node(int x,int y):data1(1),data2(1)
+		{
+			data1=x;
+			data2=y;
+		}
+};
+
+class List
+{
+	private:
+		node* head;
+	public:
+		
+		List()
+		{
+			head= NULL;	
+		}
+		
+     	int mesafe(int p1,int p2);
+     	void k_ekleme(int x, int y);
+     	void yaz();
+};
+
+int List::mesafe(int p1,int p2)
+{
+	cout<< sqrt(((p1 - head->data1)*(p1 - head->data1))+((p2 - head->data2)*(p2 - head->data2)));
+	cout<<endl;
+}
+
+void List::k_ekleme(int x,int y)
+{
+	node* eleman=new node(x,y);
+	eleman->next=head;
+	head=eleman;
+	
+}
+
+void List::yaz()
+{
+	cout<<"nesne="<<"("<<head->data1<<","<<head->data2<<")"<<endl;
+}
+
+int main()
+{
+	List liste;
+	liste.k_ekleme(1,2);
+	liste.yaz();
+	liste.mesafe(2,3);
+
+}
+</pre>
+</div>
+
+<div class="ic_kisim">
+<h3>Soru2 şablonlu</h3>
+<pre>
+#include<stdlib.h>
+#include<iostream>
+#include <math.h>
+using namespace std;
+template <class type> 
+
+class node
+{
+	public:
+		type data1,data2;
+		node* next;
+		
+		node()
+		{
+			data1=1;
+			data2=1;
+		}
+		node(type const&x=type(),type const&y=type())
+		{
+			data1=x;
+			data2= y;
+		}
+};
+template<class type>
+class List
+
+{
+	private:
+		node<type> * head;
+	public:
+		
+		List()
+		{
+			node<type>* head;
+			head= NULL;	
+		}
+     	type mesafe(type p1,type p2);
+     	type k_ekleme(type x, type y);
+     	type yaz();
+};
+
+
+
+template<class type>
+type List <type>::mesafe(type p1,type p2)
+{
+	cout<< sqrt(((p1 - head->data1)*(p1 - head->data1))+((p2 - head->data2)*(p2 - head->data2)));
+	cout<<endl;
+}
+
+template<class type>
+type List <type>::k_ekleme(type x,type y)
+{
+	node<type>*eleman=new node<type>(x,y);
+	eleman->next=head;
+	head=eleman;
+	
+}
+
+template<class type>
+type List <type>::yaz()
+{
+	cout<<"nesne="<<"("<<head->data1<<","<<head->data2<<")"<<endl;
+}
+
+
+int main()
+{
+	List <double>k;
+    k.k_ekleme(1,2);
+	k.yaz();
+	k.mesafe(1,2);
+
+}
+</pre>
+</div>
+
+<div class="ic_kisim">
+    <h3>İkili ağaç harf sorusu</h3>
+    <pre>
+#include<stdlib.h>
+#include<iostream>
+#include <math.h>
+using namespace std;
+
+class ELEMAN
+{
+	public:
+		char data;
+		ELEMAN* right;
+		ELEMAN* left;
+		ELEMAN()
+		{
+			data=' ';
+			right=NULL;
+			left=NULL;
+		};
+		ELEMAN(char x)
+		{
+			data=x;
+			right=NULL;
+			left=NULL;
+		};		
+};
+
+
+class AGAC
+{
+	private:
+		ELEMAN* root;
+		ELEMAN* _eleman_ekle(char x,ELEMAN* r);/*BU*/
+		void _in_yaz(ELEMAN* r);/*BU*/
+		void _post_yaz(ELEMAN* r);/*BU*/
+		int _elsay(ELEMAN* r);
+		int _minimum(ELEMAN* r);
+		ELEMAN* _delete_key(char x,ELEMAN* r);
+	    int _yukseklik(char x,ELEMAN* r);
+	    int _agac_yuksekligi(ELEMAN* r);
+	public:
+		Tree()
+		{
+			root=NULL;
+		};
+	    void eleman_ekle(char x);/*BU*/
+		void in_yaz();/*BU*/
+		void post_yaz();/*BU*/
+		int elsay();
+		int minimum();
+		void delete_key(char x);	
+		int yukseklik(char x);
+		int agac_yuksekligi();
+		bool bosmu();/*BU*/
+		bool yaprak();
+};
+
+bool AGAC::bosmu()
+{
+	if(root==NULL)
+	    return true;
+	return false;
+}
+
+bool AGAC::yaprak()
+{
+	if(root!=NULL&&root->left==NULL&&root->right==NULL)
+	    return true;
+	return false;
+}
+
+void AGAC::eleman_ekle(char x)
+{
+	root= _eleman_ekle(x,root);
+}
+
+ELEMAN* AGAC::_eleman_ekle(char x,ELEMAN *r)
+{
+	if(r==NULL)
+	{
+		ELEMAN* yeni=new ELEMAN(x);
+		return yeni;
+	}
+	else
+	{
+		if(x>r->data)
+		{
+			r->right= _eleman_ekle(x,r->right);
+		}
+		else
+		{
+			r->left= _eleman_ekle(x,r->left);
+		}
+	}
+	return r;	
+}
+
+void AGAC::in_yaz()
+{
+	_in_yaz(root);	
+}
+
+void AGAC::_in_yaz(ELEMAN *r)
+{
+	if(r==NULL)
+	    return;
+	else
+	{
+		_in_yaz(r->left);
+		cout<<r->data;
+		_in_yaz(r->right);
+	}
+}
+
+
+void AGAC::post_yaz()
+{
+	_post_yaz(root);	
+}
+
+void AGAC::_post_yaz(ELEMAN *r)
+{
+	if(r==NULL)
+	    return;
+	else
+	{
+		_in_yaz(r->left);
+		_in_yaz(r->right);
+        cout<<r->data;
+	}
+}
+/*
+int AGAC::elsay()
+{
+	return _elsay(root);
+}
+
+int AGAC::_elsay(ELEMAN* r)
+{
+	if (r==NULL)
+        return 0;
+	else
+	    return 1+_elsay(r->right)+_elsay(r->left);
+}
+
+int AGAC::minimum()
+{
+	return _minimum(root);
+}
+
+int AGAC::_minimum(ELEMAN* r)
+{
+	if(r==NULL)
+	    return 10000;
+	else 
+    {
+    	ELEMAN* temp=r;
+    	while(temp->left!=NULL)
+    	{
+    		temp=temp->left;
+		}
+		return temp->data;
+	}
+}
+
+
+void AGAC::delete_key(char x)
+{
+	root=_delete_key(x,root);
+}
+
+ELEMAN* AGAC::_delete_key(char x,ELEMAN* r)
+{
+	if(r==NULL)
+	    return NULL;
+	if(x>r->data)
+	    r->right=_delete_key(x,r->right);
+	else if(x<r->data)
+	    r->left=_delete_key(x,r->left);
+	else
+	{
+		if(r->right==NULL)
+		{
+			ELEMAN* temp=r->left;
+			delete(r);
+			return temp;
+		}
+		else if(r->left==NULL)
+		{
+			ELEMAN* temp=r->right;
+			delete(r);
+			return temp;
+		}
+		else
+		{
+			int minimum_value=_minimum(r->right);
+			r->data=minimum_value;
+			r->right=_delete_key(minimum_value,r->right);
+		}
+	}
+	return r;
+}
+
+int AGAC::agac_yuksekligi()
+{
+	return _agac_yuksekligi(root);
+}
+
+int AGAC::_agac_yuksekligi(ELEMAN* r)
+{
+	if(r==NULL)
+	    return -1;
+	else
+    	return 1+max(_agac_yuksekligi(r->left),_agac_yuksekligi(r->right));
+}
+*/
+
+int main()
+{
+	AGAC agac;
+	for(char x='A';x<='Z';x=x+1)
+	{
+		
+		agac.eleman_ekle(x);
+		
+	}
+	
+
+	agac.in_yaz();
+	cout<<endl;
+
+}
+</pre>
+</div>
+
+<div class="ic_kisim">
+<pre>
+<h3>İkili ağaç sayı sorusu</h3>
+#include<stdlib.h>
+#include<iostream>
+#include <math.h>
+using namespace std;
+
+class ELEMAN
+{
+	public:
+		int data;
+		ELEMAN* right;
+		ELEMAN* left;
+		ELEMAN()
+		{
+			data=0;
+			right=NULL;
+			left=NULL;
+		};
+		ELEMAN(int x)
+		{
+			data=x;
+			right=NULL;
+			left=NULL;
+		};		
+};
+
+
+class AGAC
+{
+	private:
+		ELEMAN* root;
+		ELEMAN* _eleman_ekle(int x,ELEMAN* r);/*BU*/
+		void _in_yaz(ELEMAN* r);/*BU*/
+		int _elsay(ELEMAN* r);
+		int _minimum(ELEMAN* r);
+		ELEMAN* _delete_key(int x,ELEMAN* r);
+	    int _yukseklik(int x,ELEMAN* r);/*BU*/
+	    int _agac_yuksekligi(ELEMAN* r);
+	public:
+		Tree()
+		{
+			root=NULL;
+		};
+	    void eleman_ekle(int x);/*BU*/
+		void in_yaz();/*BU*/
+		int elsay();/*BU*/
+		int minimum();
+		void delete_key(int x);	
+		int yukseklik(int x);
+		int agac_yuksekligi();/*BU*/
+		bool bosmu();/*BU*/
+		bool yaprak();
+};
+
+bool AGAC::bosmu()
+{
+	if(root==NULL)
+	    return true;
+	return false;
+}
+
+bool AGAC::yaprak()
+{
+	if(root!=NULL&&root->left==NULL&&root->right==NULL)
+	    return true;
+	return false;
+}
+
+void AGAC::eleman_ekle(int x)
+{
+	root= _eleman_ekle(x,root);
+}
+
+ELEMAN* AGAC::_eleman_ekle(int x,ELEMAN *r)
+{
+	if(r==NULL)
+	{
+		ELEMAN* yeni=new ELEMAN(x);
+		return yeni;
+	}
+	else
+	{
+		if(x>r->data)
+		{
+			r->right= _eleman_ekle(x,r->right);
+		}
+		else
+		{
+			r->left= _eleman_ekle(x,r->left);
+		}
+	}
+	return r;	
+}
+
+void AGAC::in_yaz()
+{
+	_in_yaz(root);	
+}
+
+void AGAC::_in_yaz(ELEMAN *r)
+{
+	if(r==NULL)
+	    return;
+	else
+	{
+		_in_yaz(r->left);
+		printf("%d ",r->data);
+		_in_yaz(r->right);
+	}
+}
+
+int AGAC::elsay()
+{
+	return _elsay(root);
+}
+
+int AGAC::_elsay(ELEMAN* r)
+{
+	if (r==NULL)
+        return 0;
+	else
+	    return 1+_elsay(r->right)+_elsay(r->left);
+}
+
+int AGAC::minimum()
+{
+	return _minimum(root);
+}
+
+int AGAC::_minimum(ELEMAN* r)
+{
+	if(r==NULL)
+	    return 10000;
+	else 
+    {
+    	ELEMAN* temp=r;
+    	while(temp->left!=NULL)
+    	{
+    		temp=temp->left;
+		}
+		return temp->data;
+	}
+}
+
+
+void AGAC::delete_key(int x)
+{
+	root=_delete_key(x,root);
+}
+
+ELEMAN* AGAC::_delete_key(int x,ELEMAN* r)
+{
+	if(r==NULL)
+	    return NULL;
+	if(x>r->data)
+	    r->right=_delete_key(x,r->right);
+	else if(x<r->data)
+	    r->left=_delete_key(x,r->left);
+	else
+	{
+		if(r->right==NULL)
+		{
+			ELEMAN* temp=r->left;
+			delete(r);
+			return temp;
+		}
+		else if(r->left==NULL)
+		{
+			ELEMAN* temp=r->right;
+			delete(r);
+			return temp;
+		}
+		else
+		{
+			int minimum_value=_minimum(r->right);
+			r->data=minimum_value;
+			r->right=_delete_key(minimum_value,r->right);
+		}
+	}
+	return r;
+}
+
+int AGAC::agac_yuksekligi()
+{
+	return _agac_yuksekligi(root);
+}
+
+int AGAC::_agac_yuksekligi(ELEMAN* r)
+{
+	if(r==NULL)
+	    return -1;
+	else
+    	return 1+max(_agac_yuksekligi(r->left),_agac_yuksekligi(r->right));
+}
+
+
+
+
+int main()
+{
+	AGAC agac;
+/*	agac.eleman_ekle(27);
+    agac.eleman_ekle(1);
+    agac.eleman_ekle(33);
+    agac.eleman_ekle(45);
+    agac.eleman_ekle(43);
+    agac.eleman_ekle(46);
+    agac.eleman_ekle(32);
+    agac.eleman_ekle(37);
+    agac.eleman_ekle(4);
+    agac.eleman_ekle(17);
+    agac.eleman_ekle(40);
+    agac.eleman_ekle(7);
+    agac.eleman_ekle(12);
+    agac.eleman_ekle(22);
+    agac.eleman_ekle(8);
+	agac.in_yaz();
+	cout<<endl;*/
+
+  for(int i = 1; i < 21; i++){
+ /*   cout << rand()%50+150 << endl;*/
+    agac.eleman_ekle(rand()%50+150);/*150 200 arasinda*/
+  }
+  agac.in_yaz();
+
+}
+</pre>
+</div>
+
+
+<div class="ic_kisim">
+<pre>
+<h3>Complex sayi</h3>
+#include<iostream>
+using namespace std;
+template<typename Type>
+class Complex{
+	private:
+		Type a,b;
+	public:
+		Complex(Type const&r=Type(),Type const&i=Type());
+		Type real() const;
+		Type imag() const;
+	/*	Complex exp() const;*/
+};
+
+template<typename Type>
+Complex<Type>::Complex(Type const&r,Type const&i):a(1),b(1){
+a=r;
+b=i;
+
+}
+
+template<typename Type>
+Type Complex <Type>::real() const{
+return a;
+}
+
+template<typename Type>
+Type Complex <Type>::imag() const{
+return b;
+}
+
+/*
+template<typename Type>
+Complex<Type> Complex<Type>::exp() const{
+Type exp_re=exp(a);
+return Complex<Type>(exp_re*cos(b),exp_re*sin(b));
+}
+*/
+
+
+int main(){
+ /*Complex <double>d(4.2,5.6);*/
+
+Complex<double> complex_sayi(7,2);
+
+ cout <<complex_sayi.real()<<"+"<<complex_sayi.imag()<<"i";
+}
+</pre>
+</div>
+
+<div class="ic_kisim">
+<pre>
+<h3>İkili ağaç yapısı</h3>
+ #include<stdlib.h>
+#include<iostream>
+#include <math.h>
+using namespace std;
+
+class Node
+{
+	public:
+		int data;
+		Node* right;
+		Node* left;
+		Node()
+		{
+			data=0;
+			right=NULL;
+			left=NULL;
+		};
+		Node(int x)
+		{
+			data=x;
+			right=NULL;
+			left=NULL;
+		};		
+};
+
+
+class Tree
+{
+	private:
+		Node* root;
+		Node* _ekle(int x,Node* r);
+		void _yazdirma(Node* r);
+		int _size(Node* r);
+		int _minimum(Node* r);
+		Node* _delete_key(int x,Node* r);
+	    int _yukseklik(int x,Node* r);
+	    int _agac_yuksekligi(Node* r);
+	public:
+		Tree()
+		{
+			root=NULL;
+		};
+	    void ekle(int x);
+		void yazdirma();
+		int size();
+		int minimum();
+		void delete_key(int x);	
+		int yukseklik(int x);
+		int agac_yuksekligi();
+		bool bos_mu();
+		bool yaprak();
+};
+
+bool Tree::bos_mu()
+{
+	if(root==NULL)
+	    return true;
+	return false;
+}
+
+bool Tree::yaprak()
+{
+	if(root!=NULL&&root->left==NULL&&root->right==NULL)
+	    return true;
+	return false;
+}
+
+void Tree::ekle(int x)
+{
+	root= _ekle(x,root);
+}
+
+Node* Tree::_ekle(int x,Node *r)
+{
+	if(r==NULL)
+	{
+		Node* yeni=new Node(x);
+		return yeni;
+	}
+	else
+	{
+		if(x>r->data)
+		{
+			r->right= _ekle(x,r->right);
+		}
+		else
+		{
+			r->left= _ekle(x,r->left);
+		}
+	}
+	return r;	
+}
+
+void Tree::yazdirma()
+{
+	_yazdirma(root);	
+}
+
+void Tree::_yazdirma(Node *r)
+{
+	if(r==NULL)
+	    return;
+	else
+	{
+		_yazdirma(r->left);
+		printf("%d",r->data);
+		_yazdirma(r->right);
+	}
+}
+
+int Tree::size()
+{
+	return _size(root);
+}
+
+int Tree::_size(Node* r)
+{
+	if (r==NULL)
+        return 0;
+	else
+	    return 1+_size(r->right)+_size(r->left);
+}
+
+int Tree::minimum()
+{
+	return _minimum(root);
+}
+
+int Tree::_minimum(Node* r)
+{
+	if(r==NULL)
+	    return 10000;
+	else 
+    {
+    	Node* temp=r;
+    	while(temp->left!=NULL)
+    	{
+    		temp=temp->left;
+		}
+		return temp->data;
+	}
+}
+
+
+void Tree::delete_key(int x)
+{
+	root=_delete_key(x,root);
+}
+
+Node* Tree::_delete_key(int x,Node* r)
+{
+	if(r==NULL)
+	    return NULL;
+	if(x>r->data)
+	    r->right=_delete_key(x,r->right);
+	else if(x<r->data)
+	    r->left=_delete_key(x,r->left);
+	else
+	{
+		if(r->right==NULL)
+		{
+			Node* temp=r->left;
+			delete(r);
+			return temp;
+		}
+		else if(r->left==NULL)
+		{
+			Node* temp=r->right;
+			delete(r);
+			return temp;
+		}
+		else
+		{
+			int minimum_value=_minimum(r->right);
+			r->data=minimum_value;
+			r->right=_delete_key(minimum_value,r->right);
+		}
+	}
+	return r;
+}
+
+int Tree::agac_yuksekligi()
+{
+	return _agac_yuksekligi(root);
+}
+
+int Tree::_agac_yuksekligi(Node* r)
+{
+	if(r==NULL)
+	    return -1;
+	else
+    	return 1+max(_agac_yuksekligi(r->left),_agac_yuksekligi(r->right));
+}
+
+
+
+/*
+int Tree::yukseklik(int x)
+{
+	_yukseklik(x,root);
+}
+
+int Tree::_yukseklik(int x,Node* r)
+{
+    Node* temp=r;
+
+	if(temp==NULL)
+	    return -1;
+	
+	else if(x>temp->data)
+	{
+	   /* r->right=_yukseklik(x,r->right);*
+	    temp=temp->right;
+	    _yukseklik(x,temp); 
+
+    }
+	else if(x<temp->data)
+	{
+	   /* r->left=_yukseklik(x,r->left);*
+	    temp=temp->left;
+	    _yukseklik(x,temp);
+	}
+    else
+	    return 1+max(_yukseklik(x,temp->left),_yukseklik(x,temp->right));  
+
+
+}
+*/
+int main()
+{
+	Tree agac;
+	agac.ekle(10);
+	agac.ekle(20);
+	agac.ekle(5);
+	agac.ekle(6);
+	agac.ekle(-5);
+	agac.yazdirma();
+	cout<<endl;
+	cout<<"minimum:"<<agac.minimum()<<endl;
+	cout<<"size:"<<agac.size()<<endl;
+/*	agac.delete_key(6);
+	agac.yazdirma();
+	cout<<endl;
+	agac.delete_key(5);
+	agac.yazdirma();
+*/
+    cout<<"yukseklik:"<<agac.agac_yuksekligi();
+}   
+</pre>
+</div>
+
+<div class="ic_kisim">
+<pre>
+<h3>İkili ağaç(İki tane data şçerenler için)</h3>
+  #include<stdlib.h>
+#include<iostream>
+#include <math.h>
+using namespace std;
+
+class Node
+{
+	public:
+		int koordinatx;
+		int koordinaty;
+		Node* right;
+		Node* left;
+		Node()
+		{
+			koordinatx=0;
+			koordinaty=0;
+			right=NULL;
+			left=NULL;
+		};
+		Node(int x,int y)
+		{
+			koordinatx=x;
+			koordinaty=y;
+			right=NULL;
+			left=NULL;
+		};		
+};
+
+
+class Tree
+{
+	private:
+		Node* root;
+		Node* _ekle(int x,int y,Node* r);
+		void _yazdirma(Node* r);
+		int _size(Node* r);
+		int _minimum(Node* r);
+		Node* _delete_key(int x,int y,Node* r);
+	    int _agac_yuksekligi(Node* r);
+	    bool _yaprakk(int x,int y,Node* r);
+	    int _agac_pyukseklik(int x,int y,Node* r);
+	public:
+		Tree()
+		{
+			root=NULL;
+		};
+	    void ekle(int x,int y);
+		void yazdirma();
+		int size();
+		int minimum();
+		void delete_key(int x,int y);	
+		int agac_yuksekligi();
+		bool bos_mu();
+		bool yaprak();
+		bool yaprakk(int x,int y);
+		int agac_pyukseklik(int x,int y);
+};
+
+bool Tree::bos_mu()
+{
+	if(root==NULL)
+	    return true;
+	return false;
+}
+
+bool Tree::yaprakk(int x,int y)
+{
+	return _yaprakk(x,y,root);
+	
+}
+
+bool Tree::_yaprakk(int x,int y,Node* r)
+{
+	Node* temp=r;
+	while(true)
+	{
+	if(x>temp->koordinatx)
+	    temp=temp->right;
+	else if(x<temp->koordinatx)
+	    temp=temp->left;
+	else
+	{
+	    if(temp!=NULL&&temp->left==NULL&&temp->right==NULL)
+	    {
+	    	return true;
+	        break;
+	    }
+	 return false;
+	 break;
+    }
+	}
+}
+
+
+
+bool Tree::yaprak()
+{
+	
+	if(root!=NULL&&root->left==NULL&&root->right==NULL)
+	    return true;
+	return false;
+
+}
+
+void Tree::ekle(int x,int y)
+{
+	root= _ekle(x,y,root);
+}
+
+Node* Tree::_ekle(int x,int y,Node *r)
+{
+	if(r==NULL)
+	{
+		Node* yeni=new Node(x,y);
+		return yeni;
+	}
+	else
+	{
+		if(x>r->koordinatx)
+		{
+			r->right= _ekle(x,y,r->right);
+		}
+		else
+		{
+			r->left= _ekle(x,y,r->left);
+		}
+	}
+	return r;	
+}
+
+void Tree::yazdirma()
+{
+	_yazdirma(root);	
+}
+
+void Tree::_yazdirma(Node *r)/*in_yaz*/
+{
+	if(r==NULL)
+	    return;
+	else
+	{
+		_yazdirma(r->left);
+		cout<<r->koordinatx<<","<<r->koordinaty<<" ";
+		_yazdirma(r->right);
+	}
+}
+
+int Tree::size()
+{
+	return _size(root);
+}
+
+int Tree::_size(Node* r)
+{
+	if (r==NULL)
+        return 0;
+	else
+	    return 1+_size(r->right)+_size(r->left);
+}
+
+int Tree::minimum()
+{
+	return _minimum(root);
+}
+
+int Tree::_minimum(Node* r)
+{
+	if(r==NULL)
+	    return 10000;
+	else 
+    {
+    	Node* temp=r;
+    	while(temp->left!=NULL)
+    	{
+    		temp=temp->left;
+		}
+		return temp->koordinatx;
+	}
+}
+
+
+void Tree::delete_key(int x,int y)
+{
+	root=_delete_key(x,y,root);
+}
+
+Node* Tree::_delete_key(int x,int y,Node* r)
+{
+	if(r==NULL)
+	    return NULL;
+	if(x>r->koordinatx)
+	    r->right=_delete_key(x,y,r->right);
+	else if(x<r->koordinatx)
+	    r->left=_delete_key(x,y,r->left);
+	else
+	{
+		if(r->right==NULL)
+		{
+			Node* temp=r->left;
+			delete(r);
+			return temp;
+		}
+		else if(r->left==NULL)
+		{
+			Node* temp=r->right;
+			delete(r);
+			return temp;
+		}
+		else
+		{
+			int minimum_value=_minimum(r->right);
+			r->koordinatx=minimum_value;
+			r->right=_delete_key(minimum_value,y,r->right);
+		}
+	}
+	return r;
+}
+
+int Tree::agac_yuksekligi()
+{
+	return _agac_yuksekligi(root);
+}
+
+int Tree::_agac_yuksekligi(Node* r)
+{
+	if(r==NULL)
+	    return -1;
+	else
+    	return 1+max(_agac_yuksekligi(r->left),_agac_yuksekligi(r->right));
+}
+
+
+int Tree::agac_pyukseklik(int x,int y)
+{
+	return _agac_pyukseklik(x,y,root);
+	
+}
+
+int Tree::_agac_pyukseklik(int x,int y,Node* r)
+{
+	Node* temp=r;
+	while(true)
+	{
+	if(x>temp->koordinatx)
+	    temp=temp->right;
+	else if(x<temp->koordinatx)
+	    temp=temp->left;
+	else
+	{
+		if(r==NULL)
+	        return -1;
+    	else
+        	return 1+max(_agac_yuksekligi(temp->left),_agac_yuksekligi(temp->right));
+        	break;
+
+    }
+	}
+}
+
+int main()
+{
+	Tree agac;
+	agac.ekle(10,5);
+	agac.ekle(20,7);
+	agac.ekle(5,8);
+	agac.ekle(6,8);
+	agac.ekle(-5,6);
+	agac.yazdirma();
+	cout<<endl;
+	cout<<"minimum:"<<agac.minimum()<<endl;
+	cout<<"size:"<<agac.size()<<endl;
+/*	agac.delete_key(6);
+	agac.yazdirma();
+	cout<<endl;
+	agac.delete_key(5);
+	agac.yazdirma();
+*/
+    cout<<"yukseklik:"<<agac.agac_yuksekligi()<<endl;
+    cout<<"yukseklik:"<<agac.agac_pyukseklik(-5,6)<<endl;
+    cout<<"yukseklik:"<<agac.agac_pyukseklik(20,7)<<endl;
+    cout<<"yukseklik:"<<agac.agac_pyukseklik(5,8)<<endl;
+
+  cout<<agac.yaprakk(10,5);
+  cout<<agac.yaprakk(20,7);
+  cout<<agac.yaprakk(5,8);
+  cout<<agac.yaprakk(-5,6);
+  cout<<agac.yaprak();
+}
+</pre>
+</div>
+
+<div class="ic_kisim">
+<pre>
+<h3>Halay</h3>
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+class dugum
+{
+	public:
+		string isim;
+		dugum* sonraki;	
+};
+
+class halay
+{
+	private:
+		dugum* halay_basi;
+		
+	public:
+		halay()
+		{
+			halay_basi= NULL;
+		};
+		bool bos_mu();/*�*/
+		void basa_ekle(string isim); /*b*/
+		void sona_ekle(string isim);/*i*/
+		void araya_ekle(string isim);
+		void sirali_ekle(string isim);
+		void listele();/*l*/
+		void bastan_cikar();/*ddd*/
+		void sondan_cikar();/*i*/
+		int siradan_cikar(int s);	/*�*/
+		int kac_tane();
+};
+
+int halay::siradan_cikar(int s)
+{
+	dugum* gosterici;
+	dugum* tutulan_dugum;
+    gosterici=halay_basi;
+	for(int i=1;i<=s;i=i+1)
+	{
+		if(i==s-1)
+		{
+		gosterici=tutulan_dugum;
+		gosterici=gosterici->sonraki;
+     	}
+     	else
+     	{
+		gosterici=gosterici->sonraki;
+	    }
+    } 
+    delete tutulan_dugum->sonraki;
+    tutulan_dugum->sonraki=gosterici->sonraki;
+    
+ 
+	
+	
+}
+
+
+int halay::kac_tane()
+{
+	int sayac=0;
+	dugum* gosterici;
+	gosterici=halay_basi;
+	while(gosterici->sonraki!=NULL)
+		{
+			gosterici=gosterici->sonraki;
+			sayac=sayac+1;
+		}
+		return sayac+1;
+}
+
+
+bool halay::bos_mu()
+{
+	if(halay_basi==NULL)
+	     return true;
+    return false;
+}
+
+
+void halay::basa_ekle(string isim)
+{
+	dugum* yeni_akraba=new dugum;
+	yeni_akraba->isim=isim;
+	
+	if(bos_mu())
+	{
+		yeni_akraba->sonraki=NULL;
+		halay_basi=yeni_akraba;
+	}
+	else
+	{
+		yeni_akraba->sonraki=halay_basi;
+		halay_basi=yeni_akraba;
+	}
+}
+
+
+void halay::listele()
+{
+	if(bos_mu())
+	{
+		cout<<"halayda kimse yok!\n";
+	}
+	else
+	{
+		dugum* gosterici;
+		gosterici=halay_basi;
+		while(gosterici!=NULL)
+		{
+			cout<<gosterici->isim<<" ";
+			gosterici=gosterici->sonraki;
+		}
+	}
+}
+
+
+void halay::sona_ekle(string isim)
+{
+	dugum* yeni_akraba=new dugum;
+	yeni_akraba->isim=isim;
+	yeni_akraba->sonraki=NULL;
+	if(bos_mu())
+	{
+		halay_basi=yeni_akraba;
+	}
+	else
+	{
+		dugum* gosterici;
+		gosterici=halay_basi;
+		while(gosterici->sonraki!=NULL)
+		{
+			gosterici=gosterici->sonraki;
+		}
+		gosterici->sonraki=yeni_akraba;
+	}
+}
+
+
+void halay::bastan_cikar()
+{
+	if(bos_mu()==false)
+	{
+		delete halay_basi;
+		halay_basi=halay_basi->sonraki;
+	}
+}
+
+
+void halay::sondan_cikar()
+{
+	if(bos_mu()==false)
+	{
+	
+	dugum* gosterici;
+	gosterici=halay_basi;
+    
+    for(int n=1;n<kac_tane()-1;n=n+1)
+	{
+		gosterici=gosterici->sonraki;
+	}
+	gosterici->sonraki=NULL;
+    }  
+}
+
+
+int main()
+{
+	halay halay1;
+	
+	halay1.basa_ekle("merve");
+	halay1.basa_ekle("meryem");
+	halay1.basa_ekle("metin");
+	halay1.basa_ekle("ayse");
+	halay1.listele();
+	cout<<endl;
+	
+	halay1.sona_ekle("halil");
+	halay1.sona_ekle("helin");
+	halay1.listele();	
+	cout<<endl;
+	
+	
+	halay1.bastan_cikar();
+	halay1.listele();
+	cout<<endl;
+	
+	halay1.sondan_cikar();
+	halay1.listele();
+	cout<<endl;
+	
+	
+	
+	halay1.siradan_cikar(2);
+	halay1.listele();
+	
+}
+</pre>
+</div>
+
+<div class="ic_kisim">
+<pre>
+<h3>Mesafe</h3>
+#include<iostream>
+
+using namespace std;
+template<typename Type>
+class Complex{
+	private:
+		Type x,y;
+	public:
+		Complex(Type const&x=Type(),Type const&y=Type()):
+		
+		Type yaz(Type x,Type y);
+	     Type mesafe(Type x,Type y);
+		
+};
+
+template<typename Type>
+Complex<Type>::Complex(Type const&r,Type const&i):x(1),y(1){
+x=r;
+y=i;
+
+}
+
+template<typename Type>
+Type Complex <Type>::mesafe(Type x,Type y){
+	return sqrt(x^2+y^2);
+}
+	
+template<typename Type>	
+Type Complex <Type>::yaz(Type x,Type y){
+	cout<<"nesne"<<"("<< <int>2 <<")"; 
+}
+
+
+int main(){
+
+
+Complex<double> complex_sayi(8,1);
+}
+</pre>
+</div>
+
+<div class="ic_kisim">
+<pre>
+<h3>klasno_dosno</h3>
+#include<stdlib.h>
+#include<iostream>
+
+using namespace std;
+class DOS_SIS_
+{
+	public:
+		int klas_no;
+		int dos_no;
+		DOS_SIS_* Adres;
+		
+		
+		DOS_SIS_(int x,int y):klas_no(1),dos_no(1)
+		{
+			klas_no=x;
+			dos_no=y;
+		}
+	
+};
+
+class Liste
+{
+	private:
+		DOS_SIS_* head;
+	public:
+		List()
+		{
+			head= NULL;	
+		}
+		
+		bool bosmu();
+     	void basa_ekle(int y);
+     	void sona_ekle(int y);
+     	void listele();
+};
+
+bool Liste::bosmu()
+{
+	if(head==NULL)
+	     return true;
+    return false;
+}
+     	
+     	
+void Liste::basa_ekle(int y)
+{
+	DOS_SIS_* eleman=new DOS_SIS_(y);
+	eleman->Adres=head;
+	head=eleman;
+}
+
+void Liste::sona_ekle(int y)
+{
+	if(head==NULL)
+	{
+	basa_ekle(y);
+    }
+	else
+	{
+		DOS_SIS_* temp=head;
+		while(temp->Adres!= NULL)
+		{
+			temp=temp->Adres;
+		}
+		DOS_SIS_* eleman=new DOS_SIS_();
+		eleman->Adres=NULL;
+		temp->Adres=eleman;
+	}
+}
+  /*   	
+void Liste::listele()
+{
+	if(head!=NULL)
+	{
+		DOS_SIS_* temp=head;
+    	while(temp!=NULL)	 
+    	{
+    		cout<<temp->dos_no<<" ";
+    		temp=temp->Adres;
+		}
+	}
+}  	
+     */	
+     	
+int main()
+{
+	Liste lis1;
+	
+	if(klas_no(x))
+	{
+		
+		lis1.basa_ekle(203);
+		lis1.basa_ekle(202);
+		lis1.basa_ekle(201);
+	
+	}
+	   }   	 
+</pre>
+</div>
+
+        <div class="ic_kisim">
+            <pre>
+            <h3>Halay</h3>
+            </pre>
+            </div>
+
+
+</body>
+</html>

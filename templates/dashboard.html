@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <style type="text/css">
+            table,th,td{
+            text-align:left;
+            padding:5px;
+            border:1px solid black;
+            border-collapse:collapse;
+            }
+            table#tablo1{
+            width:100%;
+            }
+            table#tablo1 th{
+            background-color:#FF8A80;
+            color:black;
+            }
+            table#tablo1 td{
+            text-align:center;
+            }
+            table#tablo1 tr:nth-child(odd){
+            background-color:	#EF5350;
+            }
+            table#tablo1 tr:nth-child(even){
+            background-color:#E53935;
+            }
+            body{
+            background-color:#E0E0E0;
+            }
+            div{
+            width:800px;
+            height:auto;
+            background-color:#EEEEEE;
+            position:relative;
+            top:40px;
+            left:10px;
+            }
+            </style>
+
+	    <meta charset="utf-8">
+        <title>Giriş</title>
+    </head>
+	
+	<body>
+        <h3>Kontrol Paneli</h3>
+		<hr>
+        <p>Hoşgeldiniz, <small>{{request.user.username}}</small></p>
+        <hr>
+        <a class="btn btn-danger" href=/articles/addarticle> Makale ekle </a>
+        {%if articles%}      
+        <div>
+            <table id="tablo1">
+            <caption></caption>
+            <tr>
+            <th>id</th>
+            <th>başlık</th>
+            <th>Yazar</th>
+            <th>Tarih</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+            </tr>
+            {%for article in articles%}
+            <tr>
+                <td>{{article.id}}</td>
+                <td><a href="/articles/article/{{article.id}}">{{article.title}}</a></td>
+                <td>{{article.author.username}}</td>
+                <td>{{article.created_date}}</td>
+                <td><a href="/articles/update/{{article.id}}">Güncelle</a></td>
+                <td><a href="/articles/delete/{{article.id}}">Sil</a></td>
+            </tr>
+            {%endfor%}
+            </table>
+        </div>
+        {%else%}
+        <div>Henüz bir makaleniz bulunmuyor.</div>
+        {%endif%}
+   
+   
+   
+   
+   
+    </body>
+
+
+</html>
